@@ -1,8 +1,5 @@
-import Hero from "./components/Hero";
+
 import Navbar from "./components/Navbar";
-import About from "./components/About";
-import Work from "./components/Work";
-import Experience from "./components/Experience";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
 import Resume from "./pages/Resume";

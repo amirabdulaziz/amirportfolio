@@ -51,7 +51,7 @@ const Resume = () => {
               </div>
               <div data-aos="fade-left">
                 <div className="px-6">
-                  <p className="text-white text-xl font-semibold leading-none tracking-tight sm:m-w-[20px]">
+                  <p className="text-lg font-semibold text-gray-900 dark:text-white">
                     Barchelor of Software Engineering(Educational Software)
                   </p>
                 </div>
@@ -63,20 +63,19 @@ const Resume = () => {
                   <p className="text-sm text-gray-200">Current CGPA: 3.73</p>
                 </div>
 
-                <div className="p-6 pt-6 space-y-6">
-                  <p className="text-white text-xl font-semibold leading-none tracking-tight sm:m-w-[20px]">
+                <div className="px-6 pt-6">
+                  <p className="text-lg font-semibold text-gray-900 dark:text-white">
                     Diploma in Computer Science(Internet Computing)
                   </p>
                 </div>
                 <div className="px-6">
-                  {" "}
                   <p className="text-gray-400 text-[12px]">
                     Sultan Idris Education University | (May 2019 - Sept 2021)
                   </p>
                   <p className="text-sm text-gray-200">CGPA: 3.73</p>
                 </div>
-                <div className="p-6 pt-6 space-y-6">
-                  <p className="text-white text-xl font-semibold leading-none tracking-tight sm:m-w-[20px]">
+                <div className="px-6 pt-6">
+                  <p className="text-lg font-semibold text-gray-900 dark:text-white">
                     Sijil Pelajaran Malaysia (SPM)
                   </p>
                 </div>
@@ -99,57 +98,64 @@ const Resume = () => {
             <div className="p-6 space-y-6">
               <h3 className="primary-color text-lg">#Experience</h3>
             </div>
-
-            <div data-aos="fade-right" className="px-6">
-              <p className="text-white text-xl font-semibold leading-none tracking-tight sm:m-w-[20px]">
-                Junior Programmer
-              </p>
-              <p className="text-gray-400 text-[12px]">
-                Akla Services Sdn Bhd | (May 2021 - July 2022)
-              </p>
-              <div>
-                <ul>
-                  <li className="text-sm text-gray-200">
-                    Designing, developing, maintaining, and analyzing web
-                    applications and mobile apps, both front end and back end.
-                  </li>
-                  <li className="text-sm text-gray-200">
-                    Design ul/UX prototype.
-                  </li>
-                  <li className="text-sm text-gray-200">
-                    Support for customer services from IT.
-                  </li>
-                  <li className="text-sm text-gray-200">
-                    Handling documentation such as user data and profiling.
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div
-              data-aos="fade-right"
-              data-aos-delay="300"
-              className="p-6 pt-6 space-y-6"
+            <ol
+              data-aos="fade-up"
+              className="relative border-s border-[#b263ff] dark:border-[#b263ff] ml-6"
             >
-              <p className="text-white text-xl font-semibold leading-none tracking-tight sm:m-w-[20px]">
-                Internship
-              </p>
-              <p className="text-gray-400 text-[12px]">
-                Akla Services Sdn Bhd | (May 2021 - july 2021)
-              </p>
-              <div className="">
-                <ul>
-                  <li className="text-sm text-gray-200">
-                    Sustaining and updating mobile and web apps.
-                  </li>
-                  <li className="text-sm text-gray-200">
-                    Support for customer services from IT.
-                  </li>
-                  <li className="text-sm text-gray-200">
-                    Handling documentation such as user data and profiling.
-                  </li>
-                </ul>
-              </div>
-            </div>
+              <li className="mb-10">
+                <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-[#b263ff] dark:border-[#b263ff] dark:bg-[#b263ff]"></div>
+                <div data-aos="fade-right" className="px-6">
+                  <p className="text-lg font-semibold text-gray-900 dark:text-white">
+                    Junior Programmer
+                  </p>
+                  <p className="text-gray-400 text-[12px]">
+                    Akla Services Sdn Bhd | (May 2021 - July 2022)
+                  </p>
+                  <div>
+                    <ul>
+                      <li className="text-sm text-gray-200">
+                        Designing, developing, maintaining, and analyzing web
+                        applications and mobile apps, both front end and back
+                        end.
+                      </li>
+                      <li className="text-sm text-gray-200">
+                        Design ul/UX prototype.
+                      </li>
+                      <li className="text-sm text-gray-200">
+                        Support for customer services from IT.
+                      </li>
+                      <li className="text-sm text-gray-200">
+                        Handling documentation such as user data and profiling.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li className="mb-10">
+                <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-[#b263ff] dark:border-[#b263ff] dark:bg-[#b263ff]"></div>
+                <div data-aos="fade-right" className="px-6">
+                  <p className="text-lg font-semibold text-gray-900 dark:text-white">
+                    Internship
+                  </p>
+                  <p className="text-gray-400 text-[12px]">
+                    Akla Services Sdn Bhd | (May 2021 - july 2021)
+                  </p>
+                  <div className="">
+                    <ul>
+                      <li className="text-sm text-gray-200">
+                        Sustaining and updating mobile and web apps.
+                      </li>
+                      <li className="text-sm text-gray-200">
+                        Support for customer services from IT.
+                      </li>
+                      <li className="text-sm text-gray-200">
+                        Handling documentation such as user data and profiling.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ol>
           </div>
         </div>
         {/* Skills */}

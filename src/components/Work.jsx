@@ -25,13 +25,13 @@ const Work = () => {
                   My <span>Projects</span>
                 </h2>
                 <p className="text-gray-500 text-center">
-                  These are my latest personal projects that I have built.
+                  These are my latest personal project that I have built.
                 </p>
               </div>
             </div>
             <div
               data-aos="zoom-in-up"
-              className="rounded-xl border border-white/[0.08] bg-card text-card-foreground shadow w-full lg:col-span-12"
+              className="rounded-xl border bg-gray-500/20 border-white/[0.1] bg-card text-card-foreground shadow w-full lg:col-span-12"
             >
               <div className="flex flex-col p-0 relative overflow-clip space-y-0 rounded-t-xl">
                 <div className="top-0 right-0 bottom-0 left-0">
@@ -84,7 +84,7 @@ const Work = () => {
                       </a>
                     </div>
                   </div>
-                  <p className="text-sm text-card-foreground text-gray-300">
+                  <p className="text-sm text-card-foreground text-white font-light text-md">
                     CNardus is a sophisticated web application designed to
                     advocate and market top-tier spray repellents that provide
                     exceptional natural defense against insects. This platform
@@ -112,7 +112,9 @@ const Work = () => {
             </div>
           </div>
           <div className="flex text-center mx-auto justify-center items-center">
-            <h3 className="primary-color text-xs mt-20">#CurrentlyWorkingOnMyPortfolioProjects</h3>
+            <h3 className="primary-color text-xs mt-20">
+              #CurrentlyWorkingOnMyPortfolioProjects
+            </h3>
           </div>
         </div>
       </div>

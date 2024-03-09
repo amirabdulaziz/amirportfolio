@@ -2,6 +2,7 @@ import React from "react";
 import hero2 from "../assets/hero2.svg";
 import { TypeAnimation } from "react-type-animation";
 import DownloadButton from "./DownloadButton";
+import me2 from "../assets/me2.png";
 
 const Hero = () => {
   // const sectionStyle = {
@@ -55,7 +56,7 @@ const Hero = () => {
           <div className="flex px-2">
             <div className="position-center ">
               <div data-aos="fade-left" className="sm:w-[500px] sm:h-[500px]">
-                <img src={hero2} className="" />
+                <img src={me2} className="" />
                 {/* <Lottie loop={true} animationData={coder} /> */}
               </div>
               {/* <div

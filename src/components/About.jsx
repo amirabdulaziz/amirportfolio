@@ -18,7 +18,7 @@ const About = () => {
                 <div
                   data-aos="fade-up"
                   data-aos-delay="300"
-                  className="text-center w-auto"
+                  className="text-center w-auto text-white font-light text-md"
                 >
                   <p>
                     Currently enrolled in Bachelor in Software Engineering at
