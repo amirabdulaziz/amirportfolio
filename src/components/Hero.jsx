@@ -1,5 +1,4 @@
 import React from "react";
-import hero2 from "../assets/hero2.svg";
 import { TypeAnimation } from "react-type-animation";
 import DownloadButton from "./DownloadButton";
 import me2 from "../assets/me2.png";

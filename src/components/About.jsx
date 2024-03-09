@@ -2,7 +2,6 @@ import React from "react";
 import ab1 from "../assets/ab1.svg";
 import ab2 from "../assets/ab2.svg";
 import ab3 from "../assets/ab3.svg";
-import { Element } from "react-scroll";
 
 const About = () => {
   return (

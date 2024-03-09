@@ -68,7 +68,7 @@ const Work = () => {
                     </div>
                     <div className="flex text-gray-400">
                       <a
-                        href=""
+                        // href=""
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-neutral-800 dark:text-neutral-200"

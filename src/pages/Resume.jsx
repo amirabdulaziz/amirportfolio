@@ -350,9 +350,9 @@ const Resume = () => {
                         <FaGithub size={24} color="#b263ff" />
                       </a>
                     </span>
-                    <a className="text-white font-bold text-sm">
+                    <p className="text-white font-bold text-sm">
                       amirabdulaziz
-                    </a>
+                    </p>
                   </div>
                   <div className="flex items-center my-2">
                     <span className="mr-2">
@@ -364,7 +364,7 @@ const Resume = () => {
                         <FaInstagram size={24} color="#b263ff" />
                       </a>
                     </span>
-                    <a className="text-white font-bold text-sm">amrrxz</a>
+                    <p className="text-white font-bold text-sm">amrrxz</p>
                   </div>
                 </div>
                 <div className="flex flex-col">
@@ -379,20 +379,22 @@ const Resume = () => {
                         <FaLinkedin size={24} color="#b263ff" />
                       </a>
                     </span>
-                    <a className="text-white font-bold text-sm">
+                    <p className="text-white font-bold text-sm">
                       MOHAMAD AINULAMIR
-                    </a>
+                    </p>
                   </div>
 
                   <div className="flex items-center my-2">
                     <span className="mr-2">
-                      <a>
+                      <div
+                      
+                      >
                         <FaEnvelope size={24} color="#b263ff" />
-                      </a>
+                      </div>
                     </span>
-                    <a className="text-white font-bold text-sm">
+                    <p className="text-white font-bold text-sm">
                       amirabdulaziz01@gmail.com
-                    </a>
+                    </p>
                   </div>
                 </div>
               </div>

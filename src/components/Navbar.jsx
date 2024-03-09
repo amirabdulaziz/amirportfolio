@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { Link as ScrolLink } from "react-scroll";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { animateScroll as scroll, scroller } from "react-scroll";
 import { SectionContext } from "../context/SectionContext";

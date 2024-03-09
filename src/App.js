@@ -1,9 +1,7 @@
 
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Footer from "./components/Footer";
 import Resume from "./pages/Resume";
-import Project from "./pages/Project";
 import Home from "./pages/Home";
 
 import { useEffect } from "react";
