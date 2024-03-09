@@ -15,7 +15,6 @@ const Resume = () => {
     history.replace("/resume");
   }, [history]);
 
-
   return (
     <div>
       <section className="container mx-auto justify-center items-center h-auto px-2 py-[40px]">
@@ -29,6 +28,7 @@ const Resume = () => {
               className="flex flex-col px-4 justify-center items-center"
             >
               <img
+                alt="user profile"
                 src={userprofile}
                 className="relative flex shrink-0 overflow-hidden rounded-full w-[100px] h-[100px] border-4 border-white mt-8"
               />

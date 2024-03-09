@@ -56,7 +56,7 @@ const Hero = () => {
           <div className="flex px-2">
             <div className="position-center ">
               <div data-aos="fade-left" className="sm:w-[500px] sm:h-[500px]">
-                <img src={me2} className="" />
+                <img alt="Amir" src={me2} className="" />
                 {/* <Lottie loop={true} animationData={coder} /> */}
               </div>
               {/* <div

@@ -40,7 +40,7 @@ const About = () => {
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-0.5 lg:gap-4 sm:gap-2 h-auto">
                     <div className="mt-4 bg-gray-500/20 rounded-md border border-white/[0.1] bg-card text-card-foreground shadow py-10 ">
                       <div className="flex flex-col justify-center items-center  w-auto mx-auto">
-                        <img src={ab1} className="w-40 h-40" />
+                        <img alt="web/mobile development" src={ab1} className="w-40 h-40" />
                         <h4 className="text white font-light text-sm text-center">
                           Web/Mobile development
                         </h4>
@@ -48,7 +48,7 @@ const About = () => {
                     </div>
                     <div className="mt-4 bg-gray-500/20 rounded-md border border-white/[0.1] bg-card text-card-foreground shadow py-10 ">
                       <div className="flex flex-col justify-center items-center  w-auto mx-auto">
-                        <img src={ab3} className="w-40 h-40" />
+                        <img alt="Software tester" src={ab3} className="w-40 h-40" />
                         <h4 className="text white font-light text-sm text-center">
                           Software Tester
                         </h4>
@@ -56,7 +56,7 @@ const About = () => {
                     </div>
                     <div className="mt-4 bg-gray-500/20 rounded-md border border-white/[0.1] bg-card text-card-foreground shadow py-10">
                       <div className="flex flex-col justify-center items-center  w-auto mx-auto">
-                        <img src={ab2} className="w-40 h-40" />
+                        <img alt="UI/UX design" src={ab2} className="w-40 h-40" />
                         <h4 className="text white font-light text-sm text-center">
                           UI/UX Design
                         </h4>
