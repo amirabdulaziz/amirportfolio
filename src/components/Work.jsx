@@ -1,5 +1,4 @@
 import React from "react";
-import cnardus from "../assets/cnardus.jpg";
 import IChatMate from "../assets/IchatMateImg.png";
 import Upsifh from "../assets/upsifh.png"
 import CNardus from "../assets/Cnardusframe.png"
