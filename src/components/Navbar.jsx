@@ -48,7 +48,7 @@ const Navbar = () => {
   }
 
   return (
-    <div className=" sticky top-0 z-10 bg-[#20242d]  flex justify-between items-center text-white mx-auto h-24 px-4 text-l">
+    <div className="bg-transparent sticky top-0 z-10  flex justify-between items-center text-white mx-auto h-24 px-4 text-l">
       <div className="container flex justify-between items-center mx-auto px-2 py-8">
         <h1
           className="w-full text-xl font-bold primary-color "

@@ -2,6 +2,7 @@ import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import DownloadButton from "./DownloadButton";
 import me2 from "../assets/me2.png";
+import "./Hero.css"
 
 const Hero = () => {
   // const sectionStyle = {
@@ -11,8 +12,8 @@ const Hero = () => {
   // };
 
   return (
-    <section className="min-h-screen px-auto" id="home">
-      <div className="overflow-hidden">
+    <section className="hero-bg mt-[-95px] min-h-screen px-auto" id="home">
+      <div className="overflow-hidden pt-20">
         {/* <ParticleBackground /> */}
         <div className="  container min-h-[90vh] flex flex-col-reverse md:grid md:grid-cols-2 md:flex-cols-2 md:justify-center gap-2 antialiased max-w-[120vh] md:items-center mx-auto pb-20">
           <div className="flex flex-col px-2 justify-center items-right">
