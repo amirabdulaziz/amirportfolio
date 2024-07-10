@@ -1,7 +1,7 @@
 import React from "react";
 import IChatMate from "../assets/IchatMateImg.png";
-import Upsifh from "../assets/upsifh.png"
-import CNardus from "../assets/Cnardusframe.png"
+import Upsifh from "../assets/upsifh.png";
+import CNardus from "../assets/Cnardusframe.png";
 
 const Work = () => {
   // don't delete this for knowledge purposes(Framer motion)
@@ -136,11 +136,12 @@ const Work = () => {
                 </div>
               </div>
             </div>
-            {/* cnardus project */}
-            <div className="flex flex-cols space-x-4">
+
+            <div className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-4">
+              {/* upsifh project */}
               <div
                 data-aos="zoom-in-up"
-                className="mb-2 rounded-xl border bg-gray-500/20 border-white/[0.1] bg-card text-card-foreground shadow w-full lg:w-1/2"
+                className=" rounded-xl border bg-gray-500/20 border-white/[0.1] bg-card text-card-foreground shadow w-full lg:w-1/2"
               >
                 <div className="flex flex-col p-0 relative overflow-clip space-y-0 rounded-t-xl">
                   <div className="top-0 right-0 bottom-0 left-0">
@@ -225,7 +226,7 @@ const Work = () => {
                 </div>
               </div>
 
-              {/* upsifh project */}
+              {/* cnardus project */}
               <div
                 data-aos="zoom-in-up"
                 className="mb-2 rounded-xl border bg-gray-500/20 border-white/[0.1] bg-card text-card-foreground shadow w-full lg:w-1/2"
@@ -283,12 +284,8 @@ const Work = () => {
                       </div>
                     </div>
                     <p className="text-sm text-card-foreground text-white font-light text-md">
-                      CNardus is a sophisticated web application designed to
-                      advocate and market top-tier spray repellents that provide
-                      exceptional natural defense against insects. This platform
-                      is dedicated to offering users an effective and
-                      environmentally friendly solution to protect themselves
-                      from insect bites and related nuisances.{" "}
+CNardus is a sophisticated web application designed to advocate and market top-tier spray repellents providing exceptional natural defense against insects. This platform offers users an effective and environmentally friendly solution to protect themselves from insect bites and related nuisances.
+
                     </p>
                   </div>
                   <div
