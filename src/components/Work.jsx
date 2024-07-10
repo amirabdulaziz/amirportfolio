@@ -196,13 +196,11 @@ const Work = () => {
                       </div>
                     </div>
                     <p className="text-sm text-card-foreground text-white font-light text-md">
-                      UPSIFH: Fitness Helper is your ultimate guide for barbell
-                      and dumbbell exercises, targeting five key muscle groups.
-                      Easily find and follow workouts tailored to your needs,
-                      with detailed instructions and images for each exercise.
-                      Get fit and strong with UPSIFH! Achieve your fitness goals
-                      efficiently and effectively with our expert guidance and
-                      support.
+                      UPSIFH: Fitness Helper provides detailed guides for
+                      barbell and dumbbell exercises, targeting five key muscle
+                      groups. It offers tailored workouts with step-by-step
+                      instructions and images for each exercise, helping users
+                      efficiently achieve their fitness goals.
                     </p>
                   </div>
                   <div
@@ -284,8 +282,12 @@ const Work = () => {
                       </div>
                     </div>
                     <p className="text-sm text-card-foreground text-white font-light text-md">
-CNardus is a sophisticated web application designed to advocate and market top-tier spray repellents providing exceptional natural defense against insects. This platform offers users an effective and environmentally friendly solution to protect themselves from insect bites and related nuisances.
-
+                      CNardus is a sophisticated web application designed to
+                      advocate and market top-tier spray repellents providing
+                      exceptional natural defense against insects. This platform
+                      offers users an effective and environmentally friendly
+                      solution to protect themselves from insect bites and
+                      related nuisances.
                     </p>
                   </div>
                   <div
