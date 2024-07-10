@@ -5,11 +5,12 @@ import { animateScroll as scroll, scroller } from "react-scroll";
 import { SectionContext } from "../context/SectionContext";
 
 const Navbar = () => {
-  //define the structure and behavior of the navbar
-  const [nav, setNav] = useState(false); //declare the state variable named  "nav" with initial value false. This variable state using useState hook . This  component state  will be used to wether the navigation list currently open or closed
+  const [nav, setNav] = useState(false);
+  const [scrollY, setScrollY] = useState(0); // State variable for scroll position
+
   const handleNav = () => {
     setNav(!nav);
-  }; //responsible for toggling the state of 'nav'  when clicked on menu or close button max-w-[1590px]
+  };
 
   const sectionCtx = useContext(SectionContext);
   const history = useHistory();
@@ -36,28 +37,43 @@ const Navbar = () => {
     if (pathname === "/resume") scroll.scrollToTop({ duration: 1 });
   }, [pathname, sectionCtx.value]);
 
-  function handleScroll(sectionName) {
+  const handleScroll = (sectionName) => {
     if (pathname === "/resume") history.push("/");
     sectionCtx.changeValue(sectionName);
-  }
+  };
 
-  function handleScrollMobile(sectionName) {
+  const handleScrollMobile = (sectionName) => {
     handleNav();
     if (pathname === "/resume") history.push("/");
     sectionCtx.changeValue(sectionName);
-  }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY); // Update scroll position state
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <div className="bg-transparent sticky top-0 z-10  flex justify-between items-center text-white mx-auto h-24 px-4 text-l">
+    <div
+      className={`sticky top-0 z-10 flex justify-between items-center text-white mx-auto h-24 px-4 text-l transition-all duration-300 ${
+        scrollY > 0 ? "bg-[#20242d]" : "bg-transparent"
+      }`}
+    >
       <div className="container flex justify-between items-center mx-auto px-2 py-8">
         <h1
-          className="w-full text-xl font-bold primary-color "
+          className="w-full text-xl font-bold primary-color"
           onClick={scrollToTop}
         >
           amirabdulaziz
         </h1>
 
-        <ul className="list-none hidden md:flex ">
+        <ul className="list-none hidden md:flex">
           {navbarItem.map((item) => (
             <li key={item.value} className="p-5 text-sm">
               <span
@@ -68,11 +84,10 @@ const Navbar = () => {
                 }`}
                 onClick={() => handleScroll(item.value)}
               >
-                {item.name}{" "}
+                {item.name}
               </span>
             </li>
           ))}
-
           <li className="p-5 text-sm">
             <Link
               to="/resume"
@@ -109,7 +124,7 @@ const Navbar = () => {
                   }`}
                   onClick={() => handleScrollMobile(item.value)}
                 >
-                  {item.name}{" "}
+                  {item.name}
                 </span>
               </li>
             ))}
