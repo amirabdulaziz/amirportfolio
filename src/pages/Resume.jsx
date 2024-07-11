@@ -60,7 +60,7 @@ const Resume = () => {
                     Sultan Idris Education University | (Sept 2021 - Sept 2025 |
                     Present)
                   </p>
-                  <p className="text-sm text-gray-200">Current CGPA: 3.73</p>
+                  <p className="text-sm text-gray-200">Current CGPA: 3.71</p>
                 </div>
 
                 <div className="px-6 pt-6">
