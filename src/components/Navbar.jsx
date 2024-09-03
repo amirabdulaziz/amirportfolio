@@ -21,6 +21,7 @@ const Navbar = () => {
     { name: "About", value: "about" },
     { name: "Experience", value: "experience" },
     { name: "Project", value: "project" },
+    { name: "Stack", value: "stack" },
   ];
 
   const scrollToTop = () => {

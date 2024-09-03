@@ -59,14 +59,14 @@ const Hero = () => {
                 <img alt="Amir" src={me2} className="" />
                 {/* <Lottie loop={true} animationData={coder} /> */}
               </div>
-              {/* <div
+              <div
                 data-aos="fade-left"
                 className="flex text-center mx-auto justify-center items-center"
               >
                 <h3 className="primary-color text-lg hidden md:block">
-                  #CurrentlyWorkingOnMyPortfolioProjects
+                  #CurrentlyDivingIntoVueJs
                 </h3>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>

@@ -60,7 +60,7 @@ const Resume = () => {
                     Sultan Idris Education University | (Sept 2021 - Sept 2025 |
                     Present)
                   </p>
-                  <p className="text-sm text-gray-200">Current CGPA: 3.71</p>
+                  <p className="text-sm text-gray-200">Current CGPA: 3.75</p>
                 </div>
 
                 <div className="px-6 pt-6">
@@ -72,7 +72,7 @@ const Resume = () => {
                   <p className="text-gray-400 text-[12px]">
                     Sultan Idris Education University | (May 2019 - Sept 2021)
                   </p>
-                  <p className="text-sm text-gray-200">CGPA: 3.73</p>
+                  <p className="text-sm text-gray-200">CGPA: 3.70</p>
                 </div>
                 <div className="px-6 pt-6">
                   <p className="text-lg font-semibold text-gray-900 dark:text-white">

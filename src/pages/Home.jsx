@@ -4,6 +4,7 @@ import About from "../components/About";
 import Experience from "../components/Experience";
 import Work from "../components/Work";
 import Footer from "../components/Footer";
+import Tech from "../components/techStack";
 import { Element } from "react-scroll";
 
 const Home = () => {
@@ -20,6 +21,9 @@ const Home = () => {
       </Element>
       <Element name="project" className="element">
         <Work />
+      </Element>
+      <Element name="tech stack" className="element">
+        <Tech />
       </Element>
       <Footer />
     </div>
