@@ -17,109 +17,100 @@ const TechStack = () => {
   return (
     <section className="bg-[#232325]" id="stack">
       <div className="container mx-auto max-w-full py-[200px] text-white h-auto">
-        <div className=" max-w-6xl mx-auto px-10">
+        <div className=" max-w-[60vh] mx-auto px-10 space-y-2">
           <div className="text-center">
             {" "}
             <h3 className="text-4xl font-semibold mb-5">
               Tech <span>Stack</span>
             </h3>
-          </div>
+            {" "}
+              <p className="text-gray-500 py-6">Curious about my <span className="primary-color">stack?</span> </p>
 
-          <div className="flex justify-center itesms-center space-x-2">
-            <div className="cols cols-6">
+          </div>
+          <div className="flex grid grid-cols-2 gap-4">
+            <div className="">
               {" "}
               <p className="primary-color py-6">Front end Stack</p>
             </div>
-            <div className="cols cols-6">
-              {" "}
-              <div className="flex justify-center items-center gap-12">
-                <div className="flex flex-col items-center">
-                  <IoLogoIonic className="text-4xl mb-2" />
-                  <p>Ionic</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <FaReact className="text-4xl mb-2" />
-                  <p>ReactJs</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <RiVuejsFill className="text-4xl mb-2" />
-                  <p>VueJs</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <SiTypescript className="text-4xl mb-2" />
-                  <p>TypeScript</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <SiMysql className="text-4xl mb-2" />
-                  <p>MySQL</p>
-                </div>
+            <div className="flex flex-cols gap-4">
+              <div className="flex flex-col items-center">
+              <IoLogoIonic className="text-4xl mb-2" />
+              <p>Ionic</p>
+              </div>
+              <div className="flex flex-col items-center">
+              <FaReact className="text-4xl mb-2" />
+              <p>ReactJs</p>
+              </div>
+              <div className="flex flex-col items-center">
+              <RiVuejsFill className="text-4xl mb-2" />
+              <p>VueJs</p>
+              </div>
+              <div className="flex flex-col items-center">
+              <SiTypescript className="text-4xl mb-2" />
+              <p>TypeScript</p>
+              </div>
+              <div className="flex flex-col items-center">
+              <SiMysql className="text-4xl mb-2" />
+              <p>MySQL</p>
               </div>
             </div>
           </div>
-
-          <div className="flex justify-center itesms-center space-x-2">
-            <div className="cols cols-6">
-              {" "}
-              <p className="primary-color py-6">Styling Stack</p>
-            </div>
-            <div className="cols cols-6">
-              {" "}
-              <div className="flex justify-center items-center gap-12">
-                <div className="flex flex-col items-center">
-                  <RiTailwindCssFill className="text-4xl mb-2" />
-                  <p>Tailwind CSS</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <FaBootstrap className="text-4xl mb-2" />
-                  <p>Bootstrap</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex justify-center itesms-center space-x-2">
-            <div className="cols cols-6">
+          <div className="flex grid grid-cols-2 gap-4">
+            <div className="">
               {" "}
               <p className="primary-color py-6">Backend end Stack</p>
             </div>
-            <div className="cols cols-6">
-              {" "}
-              <div className="flex justify-center items-center gap-12">
-                <div className="flex flex-col items-center">
-                  <FaLaravel className="text-4xl mb-2" />
-                  <p>Laravel</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <DiCodeigniter className="text-4xl mb-2" />
-                  <p>Codeigniter</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <BiLogoFlask className="text-4xl mb-2" />
-                  <p>Flask Python</p>
-                </div>
+            <div className="flex flex-cols gap-4">
+              <div className="flex flex-col items-center">
+              <RiTailwindCssFill className="text-4xl mb-2" />
+              <p>Tailwind CSS</p>
+              </div>
+              <div className="flex flex-col items-center">
+              <FaBootstrap className="text-4xl mb-2" />
+              <p>Bootstrap</p>
               </div>
             </div>
           </div>
-          <div className="flex justify-center itesms-center space-x-2">
-            <div className="cols cols-6">
+
+
+          <div className="flex grid grid-cols-2 gap-4">
+            <div className="">
+              {" "}
+              <p className="primary-color py-6">Backend end Stack</p>
+            </div>
+            <div className="flex flex-cols gap-4">
+              <div className="flex flex-col items-center">
+              <FaLaravel className="text-4xl mb-2" />
+              <p>Laravel</p>
+              </div>
+              <div className="flex flex-col items-center">
+              <DiCodeigniter className="text-4xl mb-2" />
+              <p>Codeigniter</p>
+              </div>
+              <div className="flex flex-col items-center">
+              <BiLogoFlask className="text-4xl mb-2" />
+              <p>Flask Python</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex grid grid-cols-2 gap-4">
+            <div className="">
               {" "}
               <p className="primary-color py-6">Other Stack</p>
             </div>
-            <div className="cols cols-6">
-              {" "}
-              <div className="flex justify-center items-center gap-12">
-                <div className="flex flex-col items-center">
-                  <IoLogoFirebase className="text-4xl mb-2" />
-                  <p>Firebase</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <FaGithub className="text-4xl mb-2" />
-                  <p>Github</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <FaFigma className="text-4xl mb-2" />
-                  <p>Figma</p>
-                </div>
+            <div className="flex flex-cols gap-4">
+              <div className="flex flex-col items-center">
+                <IoLogoFirebase className="text-4xl mb-2" />
+                <p>Firebase</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <FaGithub className="text-4xl mb-2" />
+                <p>Github</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <FaFigma className="text-4xl mb-2" />
+                <p>Figma</p>
               </div>
             </div>
           </div>
