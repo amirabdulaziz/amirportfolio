@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <section>
-      <div className="pt-10" id="contact">
+      <div className="pt-10 bg-[#232325]" id="contact">
         <footer className="text-white text-center py-8">
           <h1 className="text-sm mt-[100px]">@amirabdulaziz | 2024</h1>
 

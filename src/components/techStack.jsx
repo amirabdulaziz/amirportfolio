@@ -15,17 +15,20 @@ import { RiVuejsFill } from "react-icons/ri";
 
 const TechStack = () => {
   return (
-    <section className="bg-[#232325]" id="stack">
+    <section className="" id="stack">
       <div className="container mx-auto max-w-full py-[200px] text-white h-auto">
-        <div className=" max-w-[60vh] mx-auto px-10 space-y-2">
+        <div
+          data-aos="zoom-in-up"
+          className=" max-w-[70vh] mx-auto px-10 space-y-2"
+        >
           <div className="text-center">
             {" "}
             <h3 className="text-4xl font-semibold mb-5">
               Tech <span>Stack</span>
-            </h3>
-            {" "}
-              <p className="text-gray-500 py-6">Curious about my <span className="primary-color">stack?</span> </p>
-
+            </h3>{" "}
+            <p className="text-gray-500 py-6">
+              Curious about my <span className="primary-color">stack?</span>{" "}
+            </p>
           </div>
           <div className="flex grid grid-cols-2 gap-4">
             <div className="">
@@ -34,24 +37,24 @@ const TechStack = () => {
             </div>
             <div className="flex flex-cols gap-4">
               <div className="flex flex-col items-center">
-              <IoLogoIonic className="text-4xl mb-2" />
-              <p>Ionic</p>
+                <IoLogoIonic className="text-4xl mb-2" />
+                <p>Ionic</p>
               </div>
               <div className="flex flex-col items-center">
-              <FaReact className="text-4xl mb-2" />
-              <p>ReactJs</p>
+                <FaReact className="text-4xl mb-2" />
+                <p>ReactJs</p>
               </div>
               <div className="flex flex-col items-center">
-              <RiVuejsFill className="text-4xl mb-2" />
-              <p>VueJs</p>
+                <RiVuejsFill className="text-4xl mb-2" />
+                <p>VueJs</p>
               </div>
               <div className="flex flex-col items-center">
-              <SiTypescript className="text-4xl mb-2" />
-              <p>TypeScript</p>
+                <SiTypescript className="text-4xl mb-2" />
+                <p>TypeScript</p>
               </div>
               <div className="flex flex-col items-center">
-              <SiMysql className="text-4xl mb-2" />
-              <p>MySQL</p>
+                <SiMysql className="text-4xl mb-2" />
+                <p>MySQL</p>
               </div>
             </div>
           </div>
@@ -62,16 +65,15 @@ const TechStack = () => {
             </div>
             <div className="flex flex-cols gap-4">
               <div className="flex flex-col items-center">
-              <RiTailwindCssFill className="text-4xl mb-2" />
-              <p>Tailwind CSS</p>
+                <RiTailwindCssFill className="text-4xl mb-2" />
+                <p>Tailwind CSS</p>
               </div>
               <div className="flex flex-col items-center">
-              <FaBootstrap className="text-4xl mb-2" />
-              <p>Bootstrap</p>
+                <FaBootstrap className="text-4xl mb-2" />
+                <p>Bootstrap</p>
               </div>
             </div>
           </div>
-
 
           <div className="flex grid grid-cols-2 gap-4">
             <div className="">
@@ -80,16 +82,16 @@ const TechStack = () => {
             </div>
             <div className="flex flex-cols gap-4">
               <div className="flex flex-col items-center">
-              <FaLaravel className="text-4xl mb-2" />
-              <p>Laravel</p>
+                <FaLaravel className="text-4xl mb-2" />
+                <p>Laravel</p>
               </div>
               <div className="flex flex-col items-center">
-              <DiCodeigniter className="text-4xl mb-2" />
-              <p>Codeigniter</p>
+                <DiCodeigniter className="text-4xl mb-2" />
+                <p>Codeigniter</p>
               </div>
               <div className="flex flex-col items-center">
-              <BiLogoFlask className="text-4xl mb-2" />
-              <p>Flask Python</p>
+                <BiLogoFlask className="text-4xl mb-2" />
+                <p>Flask Python</p>
               </div>
             </div>
           </div>
