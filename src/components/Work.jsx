@@ -18,7 +18,7 @@ const Work = () => {
   //   }
   // }, [isInView]);
   const history = useHistory();
-  const [ setScrollY] = useState(0);
+  const setScrollY = useState(0);
   const scrollToTopandRedirect = () => {
     scroll.scrollToTop({
       duration: 500,
