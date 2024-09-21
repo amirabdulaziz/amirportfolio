@@ -15,7 +15,7 @@ const Hero = () => {
     <section className="hero-bg mt-[-95px] min-h-screen  px-auto" id="home">
       <div className="overflow-hidden pt-20">
         {/* <ParticleBackground /> */}
-        <div className="  container min-h-[90vh] max-w-[90vh] flex flex-col-reverse md:grid md:grid-cols-2 md:flex-cols-2 md:justify-center gap-2 antialiased max-w-[120vh] md:items-center mx-auto pb-20">
+        <div className="  container min-h-[90vh] max-w-[115vh] flex flex-col-reverse md:grid md:grid-cols-2 md:flex-cols-2 md:justify-center gap-2 antialiased max-w-[120vh] md:items-center mx-auto pb-20">
           <div className="flex flex-col px-2 justify-center items-right">
             <div className="">
               <h1 className="md:text-3xl sm:text-2xl text-2xl font-bold inline-flex m-2 text-left">
@@ -53,22 +53,17 @@ const Hero = () => {
               <DownloadButton />
             </div>
           </div>
-          <div className="flex px-2">
-            <div className="position-center ">
-              <div data-aos="fade-left" className="sm:w-[500px] sm:h-[500px]">
-                <img alt="Amir" src={me2} className="" />
-                {/* <Lottie loop={true} animationData={coder} /> */}
-              </div>
-              <div
-                data-aos="fade-left"
-                className="flex text-center mx-auto justify-center items-center"
-              >
-                <h3 className="primary-color text-lg  md:block">
-                  #CurrentlyDivingIntoVueJs
-                </h3>
-              </div>
-            </div>
-          </div>
+          <div className="flex flex-col justify-center items-center px-2">
+  <div className="sm:w-[500px] sm:h-[500px] flex justify-center items-center">
+    <img alt="Amir" src={me2} className="object-contain" />
+  </div>
+  <div data-aos="fade-left" className="mt-4">
+    <h3 className="primary-color text-lg md:block">
+      #CurrentlyDivingIntoVueJs
+    </h3>
+  </div>
+</div>
+
         </div>
       </div>
     </section>

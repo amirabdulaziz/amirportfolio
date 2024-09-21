@@ -74,7 +74,7 @@ const Navbar = () => {
         scrollY > 0 ? "bg-[#20242d]" : "bg-transparent"
       }`}
     >
-      <div className="container flex justify-between items-center mx-auto px-2 py-8">
+      <div className="container max-w-[115vh] flex justify-between items-center mx-auto px-2 py-8">
         <h1
           className="w-full text-xl font-bold primary-color"
           onClick={scrollToTop}

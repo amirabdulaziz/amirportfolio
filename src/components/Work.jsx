@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import IChatMate from "../assets/IchatMateImg.png";
 import Upsifh from "../assets/upsifh.png";
-import CNardus from "../assets/CNardus.svg";
 import { useHistory } from "react-router-dom";
 import { animateScroll as scroll, scroller } from "react-scroll";
-import { SiKomoot } from "react-icons/si";
+import BudakGemok from "../assets/1.svg";
 
 const Work = () => {
   // don't delete this for knowledge purposes(Framer motion)
@@ -91,7 +90,7 @@ const Work = () => {
                       </h3>
                       <p className="text-muted-foreground text-gray-400 text-xs">
                         Your Personal Counseling Assistant Chatbot Using Islamic
-                        Intervention and Cognitive Behavioral Theory (CBT)
+                        Intervention and Cognitive Behavioral Theory (CBT) #FinalYearProject
                       </p>
                     </div>
                     <div className="flex text-gray-400">
@@ -246,7 +245,7 @@ const Work = () => {
                 </div>
               </div>
 
-              {/* cnardus project */}
+              {/* 4 budak gemok */}
               <div
                 data-aos="zoom-in-up"
                 className="mb-2 rounded-xl border bg-gray-500/20 border-white/[0.1] bg-card text-card-foreground shadow w-full lg:w-1/2"
@@ -254,8 +253,8 @@ const Work = () => {
                 <div className="flex flex-col p-0 relative overflow-clip space-y-0 rounded-t-xl">
                   <div className="top-0 right-0 bottom-0 left-0">
                     <img
-                      src={CNardus}
-                      alt="cnardus"
+                      src={BudakGemok}
+                      alt="4Budakgemok"
                       loading="lazy"
                       className="w-full object-cover transition group-hover:scale-110 border-t border-white/[0.08] rounded-t-xl ease-in-out duration-1000 scale-100 delay-300"
                       style={{
@@ -279,10 +278,10 @@ const Work = () => {
                     <div className="flex justify-between">
                       <div className="flex flex-col space-y-1.5">
                         <h3 className="text-white text-xl font-semibold leading-none tracking-tight">
-                          CNardus
+                        4BudakGemokz Burgers
                         </h3>
                         <p className="text-muted-foreground text-gray-400 text-xs">
-                          Client-landing page
+                        Food Ordering System #LatestVueJsProject
                         </p>
                       </div>
                       <div className="flex text-gray-400">
@@ -304,12 +303,7 @@ const Work = () => {
                       </div>
                     </div>
                     <p className="text-sm text-card-foreground text-white font-light text-md">
-                      CNardus is a sophisticated web application designed to
-                      advocate and market top-tier spray repellents providing
-                      exceptional natural defense against insects. This platform
-                      offers users an effective and environmentally friendly
-                      solution to protect themselves from insect bites and
-                      related nuisances.
+                    4BudakGemokz Burgers: Food Ordering System offers a wide variety of appetising selections and simplifies the process of ordering burgers. With only a few taps or clicks, users can satisfy their food cravings due to the platform's easy-to-use customisation tools, safe payment options, and pickup tracking.
                     </p>
                   </div>
                   <div
@@ -318,17 +312,17 @@ const Work = () => {
                     className="px-6 flex gap-2 flex-wrap py-4 items-center"
                   >
                     <div className="text-white inline-flex rounded-sm items-center  px-2.5 py-0.5 text-xs font-semibold border-transparent bg-primary-color shadow">
-                      HTML
+                    VueJs
                     </div>
                     <div className="text-white inline-flex rounded-sm items-center  px-2.5 py-0.5 text-xs font-semibold border-transparent bg-primary-color shadow">
-                      CSS
+                    TailwindCss
                     </div>
                     <div className="text-white inline-flex rounded-sm items-center  px-2.5 py-0.5 text-xs font-semibold border-transparent bg-primary-color shadow">
-                      JavaScript
+                    Firebase
                     </div>
-                    <div className="text-white inline-flex rounded-sm items-center  px-2.5 py-0.5 text-xs font-semibold border-transparent bg-primary-color shadow">
+                    {/* <div className="text-white inline-flex rounded-sm items-center  px-2.5 py-0.5 text-xs font-semibold border-transparent bg-primary-color shadow">
                       Bootstrap
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

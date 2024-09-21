@@ -10,8 +10,8 @@ function Project() {
 
   return (
     <section>
-      <div className="container mx-auto">
-        <div className="flex flex-col gap-4">
+      <div className="container mx-auto py-8">
+        <div className="flex flex-col gap-4 ">
           <h2 className="text-2xl lg:text-3xl text-white text-center">
             My <span>Projects</span>
           </h2>
@@ -265,7 +265,7 @@ function Project() {
               </div>
               <div
                 data-aos="fade-left"
-                data-aos-delay="320"
+                data-aos-delay="300"
                 className="px-6 flex gap-2 flex-wrap py-4 items-center mt-auto"
               >
                   <div className="text-white inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold  border-transparent bg-primary-color  shadow ">
@@ -368,7 +368,7 @@ function Project() {
               </div>
               <div
                 data-aos="fade-left"
-                data-aos-delay="320"
+                data-aos-delay="300"
                 className="px-6 flex gap-2 flex-wrap py-4 items-center mt-auto"
               >
                 <div className="text-white inline-flex rounded-sm items-center  px-2.5 py-0.5 text-xs font-semibold border-transparent bg-primary-color shadow">
