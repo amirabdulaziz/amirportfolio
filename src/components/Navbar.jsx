@@ -6,7 +6,7 @@ import { SectionContext } from "../context/SectionContext";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-  const [scrollY, setScrollY] = useState(0); // State variable for scroll position
+  const [scrollY, setScrollY] = useState(0); 
 
   const handleNav = () => {
     setNav(!nav);
@@ -38,10 +38,18 @@ const Navbar = () => {
     if (pathname === "/resume") scroll.scrollToTop({ duration: 1 });
   }, [pathname, sectionCtx.value]);
 
+  // const handleScroll = (sectionName) => {
+  //   if (pathname === "/resume") history.push("/");
+  //   sectionCtx.changeValue(sectionName);
+    
+  // };
   const handleScroll = (sectionName) => {
-    if (pathname === "/resume") history.push("/");
-    sectionCtx.changeValue(sectionName);
+    if (pathname !== "/") {
+      history.push("/"); 
+    }
+    sectionCtx.changeValue(sectionName); 
   };
+  
 
   const handleScrollMobile = (sectionName) => {
     handleNav();

@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import IChatMate from "../assets/IchatMateImg.png";
 import Upsifh from "../assets/upsifh.png";
-import CNardus from "../assets/Cnardusframe.png";
+import CNardus from "../assets/CNardus.svg";
+import { useHistory } from "react-router-dom";
+import { animateScroll as scroll, scroller } from "react-scroll";
+import { SiKomoot } from "react-icons/si";
 
 const Work = () => {
   // don't delete this for knowledge purposes(Framer motion)
@@ -15,6 +18,27 @@ const Work = () => {
   //     mainControls.start("visible");
   //   }
   // }, [isInView]);
+  const history = useHistory();
+  const [scrollY, setScrollY] = useState(0);
+  const scrollToTopandRedirect = () => {
+    scroll.scrollToTop({
+      duration: 500,
+      smooth: "easeInOutQuad",
+    });
+    setTimeout(() => {
+      history.push("/project");
+    }, 500);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <section className="bg-[#232325] py-[200px]" id="project">
@@ -40,7 +64,7 @@ const Work = () => {
                 <div className="top-0 right-0 bottom-0 left-0">
                   <img
                     src={IChatMate}
-                    alt="cnardus"
+                    alt="IChatMate"
                     loading="lazy"
                     className="w-full object-cover transition group-hover:scale-110 border-t border-white/[0.08] rounded-t-xl ease-in-out duration-1000 scale-100 delay-300"
                     style={{
@@ -55,7 +79,6 @@ const Work = () => {
                     sizes="100vw"
                   />
                 </div>
-
                 <div
                   data-aos="fade-right"
                   data-aos-delay="350"
@@ -136,7 +159,6 @@ const Work = () => {
                 </div>
               </div>
             </div>
-
             <div className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-4">
               {/* upsifh project */}
               <div
@@ -314,7 +336,12 @@ const Work = () => {
           </div>
           <div className="flex text-center mx-auto justify-center items-center">
             <h3 className="primary-color text-xs mt-20">
-              #CurrentlyWorkingOnUPSIFHProject
+              <a
+                // id="ClickHereToViewMoreProjects"
+                onClick={scrollToTopandRedirect}
+              >
+                #ClickHereToViewMoreProjects
+              </a>
             </h3>
           </div>
         </div>

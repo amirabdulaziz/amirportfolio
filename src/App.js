@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Resume from "./pages/Resume";
 import Home from "./pages/Home";
+import Project from "./pages/Project";
 
 import { useEffect } from "react";
 
@@ -25,6 +26,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
+          <Route path="/project" exact component={Project} />
           <Route path="/resume" exact component={Resume} />
         </Switch>
       </SectionContextProvider>

@@ -11,7 +11,6 @@ const Resume = () => {
   const history = useHistory();
 
   useEffect(() => {
-    // Replace the current entry in the history stack
     history.replace("/resume");
   }, [history]);
 
