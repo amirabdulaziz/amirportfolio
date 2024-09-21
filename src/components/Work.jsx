@@ -18,7 +18,7 @@ const Work = () => {
   //   }
   // }, [isInView]);
   const history = useHistory();
-  const [scrollY, setScrollY] = useState(0);
+  // const [scrollY, setScrollY] = useState(0);
   const scrollToTopandRedirect = () => {
     scroll.scrollToTop({
       duration: 500,
@@ -29,15 +29,14 @@ const Work = () => {
     }, 500);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   return (
     <section className="bg-[#232325] py-[200px]" id="project">
