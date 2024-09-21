@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import IChatMate from "../assets/IchatMateImg.png";
 import Upsifh from "../assets/upsifh.png";
 import { useHistory } from "react-router-dom";
-import { animateScroll as scroll, scroller } from "react-scroll";
+import { animateScroll as scroll } from "react-scroll";
 import BudakGemok from "../assets/1.svg";
 
 const Work = () => {
@@ -18,7 +18,7 @@ const Work = () => {
   //   }
   // }, [isInView]);
   const history = useHistory();
-  const [scrollY, setScrollY] = useState(0);
+  const [ setScrollY] = useState(0);
   const scrollToTopandRedirect = () => {
     scroll.scrollToTop({
       duration: 500,
