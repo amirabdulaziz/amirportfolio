@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import BudakGemok from "../assets/1.svg";
 import IChatMate from "../assets/IchatMateImg.png";
 import Upsifh from "../assets/upsifh.png";
