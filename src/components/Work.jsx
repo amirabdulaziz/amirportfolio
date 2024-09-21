@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+
 import IChatMate from "../assets/IchatMateImg.png";
 import Upsifh from "../assets/upsifh.png";
 import { useHistory } from "react-router-dom";
