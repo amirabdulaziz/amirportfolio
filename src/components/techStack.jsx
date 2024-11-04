@@ -52,16 +52,12 @@ const TechStack = () => {
                 <SiTypescript className="text-4xl mb-2" />
                 <p>TypeScript</p>
               </div>
-              <div className="flex flex-col items-center">
-                <SiMysql className="text-4xl mb-2" />
-                <p>MySQL</p>
-              </div>
             </div>
           </div>
           <div className="flex grid grid-cols-2 gap-4">
             <div className="">
               {" "}
-              <p className="primary-color py-6">Backend end Stack</p>
+              <p className="primary-color py-6">Styling Stack</p>
             </div>
             <div className="flex flex-cols gap-4">
               <div className="flex flex-col items-center">
@@ -92,6 +88,10 @@ const TechStack = () => {
               <div className="flex flex-col items-center">
                 <BiLogoFlask className="text-4xl mb-2" />
                 <p>Flask Python</p>
+              </div>
+              <div className="flex flex-col items-center">
+                <SiMysql className="text-4xl mb-2" />
+                <p>MySQL</p>
               </div>
             </div>
           </div>
