@@ -41,7 +41,7 @@ const Hero = () => {
                 className=" text-white sm:mt-5 sm:max-w-xl md:mt-5 text-md font-light ml-2 "
               >
                 Hi, I'm <span className="primary-color">Amir</span> , i am a
-                passionate software developer from Jerantut, Pahang. I code in
+                passionate software Engineer based in Jerantut, Pahang. I code in
                 Front-end React, and much more. I'm also passionate about
                 technology, diversity and inclusion.
               </p>

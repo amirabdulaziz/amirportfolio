@@ -26,7 +26,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
-          <Route path="/project" exact component={Project} />
+          <Route path="/more-project" exact component={Project} />
           <Route path="/resume" exact component={Resume} />
         </Switch>
       </SectionContextProvider>

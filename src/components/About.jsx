@@ -20,16 +20,9 @@ const About = () => {
                   className="text-center w-auto text-white font-light text-md"
                 >
                   <p>
-                    Currently enrolled in Bachelor in Software Engineering at
-                    University Education of Sultan Idris UPSI. <br />I am
-                    looking for internship placement to further develop and
-                    apply my skills in the field of Computer Science and
-                    Software Engineering. I am particularly drawn to
-                    opportunities that provide a friendly and collaborative work
-                    environment, where I can not only apply my academic
-                    knowledge but also actively engage in real-world projects. I
-                    am excited about the prospect of facing new challenges and
-                    contributing to the success of your esteemed organization.
+                  I’m a Software Engineer specializing in frontend development, with expertise in frameworks like Ionic, ReactJS, VueJS, and TypeScript. I create sleek, responsive applications using Tailwind CSS and Bootstrap, bringing innovative, user-focused designs to life.  
+
+I’ve built a few projects, and they’re kinda dope! With additional skills in backend tools like Laravel, Flask, and MySQL, as well as Firebase, GitHub, and Figma, I thrive on tackling challenges and delivering impactful, real-world solutions. Let’s build something extraordinary!
                   </p>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="300">

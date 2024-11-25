@@ -25,18 +25,9 @@ const Work = () => {
       smooth: "easeInOutQuad",
     });
     setTimeout(() => {
-      history.push("/project");
+      history.push("/more-project");
     }, 500);
   };
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
 
   return (
     <section className="bg-[#232325] py-[200px]" id="project">

@@ -27,7 +27,6 @@ function Project() {
         <div className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-4 py-4">
           {/* 4 budak gemok */}
           <div
-            data-aos="zoom-in-up"
             className=" rounded-xl border bg-gray-500/20 border-white/[0.1] bg-card text-card-foreground shadow w-full lg:w-1/2"
           >
             <div className="flex flex-col p-0 relative overflow-clip space-y-0 rounded-t-xl">
@@ -51,8 +50,6 @@ function Project() {
               </div>
 
               <div
-                data-aos="fade-right"
-                data-aos-delay="350"
                 className="p-6 pt-6 space-y-6"
               >
                 <div className="flex justify-between">
@@ -87,8 +84,6 @@ function Project() {
                 </p>
               </div>
               <div
-                data-aos="fade-left"
-                data-aos-delay="320"
                 className="px-6 flex gap-2 flex-wrap py-4 items-center"
               >
                 <div className="text-white inline-flex rounded-sm items-center  px-2.5 py-0.5 text-xs font-semibold border-transparent bg-primary-color shadow">
@@ -105,7 +100,6 @@ function Project() {
           </div>
           {/* cnardus project */}
           <div
-            data-aos="zoom-in-up"
             className="mb-2 rounded-xl border bg-gray-500/20 border-white/[0.1] bg-card text-card-foreground shadow w-full lg:w-1/2"
           >
             <div className="flex flex-col p-0 relative overflow-clip space-y-0 rounded-t-xl">
@@ -129,8 +123,6 @@ function Project() {
               </div>
 
               <div
-                data-aos="fade-right"
-                data-aos-delay="350"
                 className="p-6 pt-6 space-y-6"
               >
                 <div className="flex justify-between">
@@ -170,8 +162,6 @@ function Project() {
                 </p>
               </div>
               <div
-                data-aos="fade-left"
-                data-aos-delay="320"
                 className="px-6 flex gap-2 flex-wrap py-4 items-center"
               >
                 <div className="text-white inline-flex rounded-sm items-center  px-2.5 py-0.5 text-xs font-semibold border-transparent bg-primary-color shadow">
@@ -198,7 +188,6 @@ function Project() {
         <div className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-4 py-4">
           {/* ichatmate project */}
           <div
-            data-aos="zoom-in-up"
             className=" rounded-xl border bg-gray-500/20 border-white/[0.1] bg-card text-card-foreground shadow w-full lg:w-1/2 flex flex-col"
           >
             <div className="flex flex-col p-0 relative overflow-clip space-y-0 rounded-t-xl flex-grow">
@@ -222,8 +211,6 @@ function Project() {
               </div>
 
               <div
-                data-aos="fade-right"
-                data-aos-delay="350"
                 className="p-4 pt-6 space-y-4 flex-grow flex flex-col justify-between"
               >
                 <div className="flex justify-between">
@@ -264,8 +251,6 @@ function Project() {
                 </p>
               </div>
               <div
-                data-aos="fade-left"
-                data-aos-delay="300"
                 className="px-6 flex gap-2 flex-wrap py-4 items-center mt-auto"
               >
                   <div className="text-white inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold  border-transparent bg-primary-color  shadow ">
@@ -303,7 +288,6 @@ function Project() {
           </div>
           {/* upsifh project */}
           <div
-            data-aos="zoom-in-up"
             className=" rounded-xl border bg-gray-500/20 border-white/[0.1] bg-card text-card-foreground shadow w-full lg:w-1/2 flex flex-col"
           >
             <div className="flex flex-col p-0 relative overflow-clip space-y-0 rounded-t-xl flex-grow">
@@ -327,8 +311,6 @@ function Project() {
               </div>
 
               <div
-                data-aos="fade-right"
-                data-aos-delay="350"
                 className="p-4 pt-6 space-y-4 flex-grow flex flex-col justify-between"
               >
                 <div className="flex justify-between">
@@ -367,8 +349,6 @@ function Project() {
                 </p>
               </div>
               <div
-                data-aos="fade-left"
-                data-aos-delay="300"
                 className="px-6 flex gap-2 flex-wrap py-4 items-center mt-auto"
               >
                 <div className="text-white inline-flex rounded-sm items-center  px-2.5 py-0.5 text-xs font-semibold border-transparent bg-primary-color shadow">
