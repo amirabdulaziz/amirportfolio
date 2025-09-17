@@ -12,7 +12,7 @@ const Navbar = () => {
     setNav(!nav);
   };
 
-  const sectionCtx = useContext(SectionContext);
+  const { value, changeValue } = useContext(SectionContext);
   const history = useHistory();
   const { pathname } = useLocation();
 
@@ -31,27 +31,27 @@ const Navbar = () => {
 
   useEffect(() => {
     if (pathname === "/") {
-      if (sectionCtx.value === "home") scroll.scrollToTop({ duration: 100 });
-      else scroller.scrollTo(sectionCtx.value);
+      if (value === "home") scroll.scrollToTop({ duration: 100 });
+      else scroller.scrollTo(value);
     }
 
   if (pathname === "/resume") {
     scroll.scrollToTop({ duration: 1 });
-    sectionCtx.changeValue("");
+    changeValue("");
   }
-  }, [pathname, sectionCtx.value]);
+  }, [pathname, value, changeValue]);
 
   const handleScroll = (sectionName) => {
     if (pathname !== "/") {
       history.push("/");
     }
-    sectionCtx.changeValue(sectionName);
+    changeValue(sectionName);
   };
 
   const handleScrollMobile = (sectionName) => {
     handleNav();
     if (pathname === "/resume") history.push("/");
-    sectionCtx.changeValue(sectionName);
+    changeValue(sectionName);
   };
 
   useEffect(() => {
@@ -84,7 +84,7 @@ const Navbar = () => {
             <li key={item.value} className="p-5 text-sm">
               <span
                 className={`cursor-pointer ${
-                  item.value === sectionCtx.value
+                  item.value === value
                     ? "text-white"
                     : "primary-color"
                 }`}
@@ -123,7 +123,7 @@ const Navbar = () => {
     <li key={item.value} className="px-4 py-2 text-sm">
       <span
         className={`cursor-pointer ${
-          item.value === sectionCtx.value
+          item.value === value
             ? "text-white"
             : "primary-color"
         }`}
