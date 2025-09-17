@@ -5,11 +5,6 @@ import me2 from "../assets/me4.png";
 import "./Hero.css"
 
 const Hero = () => {
-  // const sectionStyle = {
-  //   backgroundImage: `url(${require("../assets/bg.jpg")})`,
-  //   backgroundSize: "cover",
-  //   backgroundPosition: "center",
-  // };
 
   return (
     <section className="hero-bg mt-[-95px] min-h-screen  px-auto" id="home">

@@ -101,7 +101,7 @@ const Resume = () => {
               data-aos="fade-up"
               className="relative border-s border-[#b263ff] dark:border-[#b263ff] ml-6"
             >
-                            <li class="mb-10 ms-4 bg-gray-500/20 rounded-xl border border-white/[0.1] p-6">
+              <li class="mb-10 ms-4 bg-gray-500/20 rounded-xl border border-white/[0.1] p-6">
                 <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-[#b263ff] dark:border-[#b263ff] dark:bg-[#b263ff]"></div>
                 <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                   (Sept 2025 - Present)
@@ -114,8 +114,7 @@ const Resume = () => {
                   className="text-base font-normal text-gray-500 dark:text-gray-400"
                 >
                   <ul>
-                    <li className="text-sm">
-                    </li>
+                    <li className="text-sm"></li>
                   </ul>
                 </div>
                 <div
@@ -123,10 +122,10 @@ const Resume = () => {
                   className="flex gap-2 flex-wrap py-2 items-center text-white font-light"
                 >
                   <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    PHP 
+                    PHP
                   </div>
-                    <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    Git 
+                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
+                    Git
                   </div>
                 </div>
               </li>
@@ -214,7 +213,7 @@ const Resume = () => {
               <li class="mb-10 ms-4 bg-gray-500/20 rounded-xl border border-white/[0.1] p-6">
                 <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-[#b263ff] dark:border-[#b263ff] dark:bg-[#b263ff]"></div>
                 <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                  (Sept 2024 - Present)
+                  (Sept 2024 - Feb 2025)
                 </time>
                 <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
                   ICT Intern | Frontend developer @ PKT Logistics Sdn Bhd
