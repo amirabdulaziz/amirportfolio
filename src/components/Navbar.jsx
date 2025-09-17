@@ -41,11 +41,6 @@ const Navbar = () => {
   }
   }, [pathname, sectionCtx.value]);
 
-  // const handleScroll = (sectionName) => {
-  //   if (pathname === "/resume") history.push("/");
-  //   sectionCtx.changeValue(sectionName);
-
-  // };
   const handleScroll = (sectionName) => {
     if (pathname !== "/") {
       history.push("/");
@@ -61,7 +56,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY); // Update scroll position state
+      setScrollY(window.scrollY); 
     };
 
     window.addEventListener("scroll", handleScroll);
