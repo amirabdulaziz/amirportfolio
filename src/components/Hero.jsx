@@ -1,7 +1,7 @@
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import DownloadButton from "./DownloadButton";
-import me2 from "../assets/me2.png";
+import me2 from "../assets/me4.png";
 import "./Hero.css"
 
 const Hero = () => {
