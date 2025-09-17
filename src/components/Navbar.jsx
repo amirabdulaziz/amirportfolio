@@ -6,7 +6,7 @@ import { SectionContext } from "../context/SectionContext";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-  const [scrollY, setScrollY] = useState(0); 
+  const [scrollY, setScrollY] = useState(0);
 
   const handleNav = () => {
     setNav(!nav);
@@ -35,21 +35,23 @@ const Navbar = () => {
       else scroller.scrollTo(sectionCtx.value);
     }
 
-    if (pathname === "/resume") scroll.scrollToTop({ duration: 1 });
+  if (pathname === "/resume") {
+    scroll.scrollToTop({ duration: 1 });
+    sectionCtx.changeValue("");
+  }
   }, [pathname, sectionCtx.value]);
 
   // const handleScroll = (sectionName) => {
   //   if (pathname === "/resume") history.push("/");
   //   sectionCtx.changeValue(sectionName);
-    
+
   // };
   const handleScroll = (sectionName) => {
     if (pathname !== "/") {
-      history.push("/"); 
+      history.push("/");
     }
-    sectionCtx.changeValue(sectionName); 
+    sectionCtx.changeValue(sectionName);
   };
-  
 
   const handleScrollMobile = (sectionName) => {
     handleNav();
@@ -100,7 +102,6 @@ const Navbar = () => {
           <li className="p-5 text-sm">
             <Link
               to="/resume"
-              onClick={() => handleScroll("resume")}
               className={`cursor-pointer ${
                 pathname === "/resume" ? "text-white" : "primary-color"
               }`}
@@ -122,33 +123,33 @@ const Navbar = () => {
           <h1 className="text-xl font-bold primary-color px-2 py-8">
             amirabdulaziz
           </h1>
-          <ul className="list-none py-2 text-xl">
-            {navbarItem.map((item) => (
-              <li key={item.value} className="px-4 py-2 text-sm">
-                <span
-                  className={`cursor-pointer ${
-                    item.value === sectionCtx.value
-                      ? "text-white"
-                      : "primary-color"
-                  }`}
-                  onClick={() => handleScrollMobile(item.value)}
-                >
-                  {item.name}
-                </span>
-              </li>
-            ))}
-            <li className="px-4 py-2 text-sm">
-              <Link
-                to="/resume"
-                onClick={() => handleScrollMobile("resume")}
-                className={`cursor-pointer ${
-                  pathname === "/resume" ? "text-white" : "primary-color"
-                }`}
-              >
-                Resume
-              </Link>
-            </li>
-          </ul>
+<ul className="list-none py-2 text-xl">
+  {navbarItem.map((item) => (
+    <li key={item.value} className="px-4 py-2 text-sm">
+      <span
+        className={`cursor-pointer ${
+          item.value === sectionCtx.value
+            ? "text-white"
+            : "primary-color"
+        }`}
+        onClick={() => handleScrollMobile(item.value)}
+      >
+        {item.name}
+      </span>
+    </li>
+  ))}
+  <li className="px-4 py-2 text-sm">
+    <Link
+      to="/resume"
+      onClick={handleNav}
+      className={`cursor-pointer ${
+        pathname === "/resume" ? "text-white" : "primary-color"
+      }`}
+    >
+      Resume
+    </Link>
+  </li>
+</ul>
         </div>
       </div>
     </div>
