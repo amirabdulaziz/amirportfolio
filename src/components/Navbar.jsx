@@ -3,9 +3,6 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { animateScroll as scroll, scroller } from "react-scroll";
 import { SectionContext } from "../context/SectionContext";
-
-// Headless UI
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { ChevronDownIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 
 const Navbar = () => {
