@@ -12,6 +12,10 @@ import { FaBootstrap } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { SiMysql } from "react-icons/si";
 import { RiVuejsFill } from "react-icons/ri";
+import { FaNodeJs } from "react-icons/fa";
+import { SiMongodb } from "react-icons/si";
+import { SiPostgresql } from "react-icons/si";
+import { FaGitAlt } from "react-icons/fa";
 
 const TechStack = () => {
   return (
@@ -37,19 +41,19 @@ const TechStack = () => {
             <div className="flex flex-wrap gap-4">
               <div className="flex flex-col items-center">
                 <IoLogoIonic className="text-4xl mb-2" />
-                <p>Ionic</p>
+                <p className="text-sm">Ionic</p>
               </div>
               <div className="flex flex-col items-center">
                 <FaReact className="text-4xl mb-2" />
-                <p>ReactJs</p>
+                <p className="text-sm">ReactJs</p>
               </div>
               <div className="flex flex-col items-center">
                 <RiVuejsFill className="text-4xl mb-2" />
-                <p>VueJs</p>
+                <p className="text-sm">VueJs</p>
               </div>
               <div className="flex flex-col items-center">
                 <SiTypescript className="text-4xl mb-2" />
-                <p>TypeScript</p>
+                <p className="text-sm">TypeScript</p>
               </div>
             </div>
           </div>
@@ -61,11 +65,11 @@ const TechStack = () => {
             <div className="flex flex-wrap gap-4">
               <div className="flex flex-col items-center">
                 <RiTailwindCssFill className="text-4xl mb-2" />
-                <p>Tailwind CSS</p>
+                <p className="text-sm">Tailwind CSS</p>
               </div>
               <div className="flex flex-col items-center">
                 <FaBootstrap className="text-4xl mb-2" />
-                <p>Bootstrap</p>
+                <p className="text-sm">Bootstrap</p>
               </div>
             </div>
           </div>
@@ -77,19 +81,38 @@ const TechStack = () => {
             <div className="flex flex-wrap gap-4">
               <div className="flex flex-col items-center">
                 <FaLaravel className="text-4xl mb-2" />
-                <p>Laravel</p>
+                <p className="text-sm">Laravel</p>
               </div>
               <div className="flex flex-col items-center">
                 <DiCodeigniter className="text-4xl mb-2" />
-                <p>Codeigniter</p>
+                <p className="text-sm">Codeigniter</p>
               </div>
               <div className="flex flex-col items-center">
                 <BiLogoFlask className="text-4xl mb-2" />
-                <p>Flask Python</p>
+                <p className="text-sm">Flask Python</p>
               </div>
               <div className="flex flex-col items-center">
+                <FaNodeJs className="text-4xl mb-2" />
+                <p className="text-sm">NodeJs</p>
+              </div>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="">
+              <p className="primary-color py-6">Database Stack</p>
+            </div>
+            <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col items-center">
                 <SiMysql className="text-4xl mb-2" />
-                <p>MySQL</p>
+                <p className="text-sm">MySQL</p>
+              </div>
+                <div className="flex flex-col items-center">
+                <SiMongodb className="text-4xl mb-2" />
+                <p className="text-sm">Mongodb</p>
+              </div>
+                              <div className="flex flex-col items-center">
+                <SiPostgresql className="text-4xl mb-2" />
+                <p className="text-sm">Postgresql</p>
               </div>
             </div>
           </div>
@@ -101,15 +124,19 @@ const TechStack = () => {
             <div className="flex flex-wrap gap-4">
               <div className="flex flex-col items-center">
                 <IoLogoFirebase className="text-4xl mb-2" />
-                <p>Firebase</p>
+                <p className="text-sm">Firebase</p>
+              </div>
+               <div className="flex flex-col items-center">
+                <FaGitAlt className="text-4xl mb-2" />
+                <p className="text-sm">Git</p>
               </div>
               <div className="flex flex-col items-center">
                 <FaGithub className="text-4xl mb-2" />
-                <p>GitHub</p>
+                <p className="text-sm">GitHub</p>
               </div>
               <div className="flex flex-col items-center">
                 <FaFigma className="text-4xl mb-2" />
-                <p>Figma</p>
+                <p className="text-sm">Figma</p>
               </div>
             </div>
           </div>
