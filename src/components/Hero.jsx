@@ -20,22 +20,23 @@ return (
               1000, ]} wrapper="span" speed={50} repeat={Infinity} />
           </h1>
         </div>
-
+      <div data-aos="fade-right">
         <div>
-          <p data-aos="fade-right" className=" text-white sm:mt-5 sm:max-w-xl md:mt-5 text-md font-light ml-2 ">
+          <p  className=" text-white sm:mt-5 sm:max-w-xl md:mt-5 text-md font-light ml-2 ">
             Hi, I'm <span className="primary-color">Amir</span> , i am a
             passionate software Engineer based in Jerantut, Pahang. I code in
             Front-end React, and much more. I'm also passionate about
             technology, diversity and inclusion.
           </p>
         </div>
-        <div data-aos="fade-right" className="rounded-md shadow mt-10 ml-2 ">
+        <div  className="rounded-md shadow mt-10 ml-2 ">
           <DownloadButton />
         </div>
       </div>
+      </div>
       <div className="flex flex-col justify-center items-center px-2">
         <div className=" flex justify-right items-center">
-          <img alt="Amir" src={me2} className="object-contain w-[500px] ml-[40px]" />
+          <img alt="Amir" src={me2} className="object-contain w-[400px] ml-[40px]" />
         </div>
         <div data-aos="fade-left" className="mt-4">
           <h3 className="primary-color text-lg md:block">

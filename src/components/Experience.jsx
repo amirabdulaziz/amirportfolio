@@ -129,7 +129,7 @@ const Experience = () => {
         <div data-aos="fade-up" data-aos-delay="300">
           <ol
             // data-aos="fade-up"
-            className="relative border-s border-[#b263ff] dark:border-[#b263ff]"
+            className=" border-s border-[#b263ff] dark:border-[#b263ff]"
           >
             {experienceItems.map((item, index) => {
               const isHidden = !showAll && index >= 3;
@@ -137,15 +137,11 @@ const Experience = () => {
               return (
                 <li
                   key={index}
-                  className={`mb-10 ms-6 transition-all duration-500 ease-out ${
+                  className={`ms-6 transition-all duration-500 ease-out mb-2 ${
                     isHidden
                       ? "max-h-0 opacity-0 overflow-hidden transform -translate-y-4"
                       : "max-h-[2000px] opacity-100 transform translate-y-0"
-                  }`}
-                  style={{
-                    transitionDelay:
-                      showAll && index >= 3 ? `${(index - 3) * 150}ms` : "0ms",
-                  }}
+                  } ${index === experienceItems.length - 1 ? "mb-0" : "mb-2"}`}
                 >
                   <span className="absolute flex items-center justify-center ml-[-25px] w-6 h-6 bg-[#b263ff] rounded-full -start-3 ring-8 ring-gray-800 dark:ring-gray-900">
                     <svg
@@ -162,11 +158,11 @@ const Experience = () => {
                   <div className="bg-gray-500/20 rounded-xl border border-white/[0.1] p-6">
                     <h3 className="flex items-center mb-1 text-lg font-semibold text-white">
                       {item.title}
-                      {item.current && (
+                      {/* {item.current && (
                         <span className="bg-[#b263ff] text-white text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm ms-3">
                           Current
                         </span>
-                      )}
+                      )} */}
                     </h3>
                     <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                       {item.date}

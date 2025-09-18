@@ -132,8 +132,8 @@ const Resume = () => {
 
   return (
     <div>
-      <section className="container mx-auto justify-center items-center h-auto px-2 py-[40px]">
-        <h2 className="mb-8 text-3xl text-white text-center">
+      <section className="container mx-auto justify-center items-center h-auto px-2 py-[60px]">
+        <h2 className="mb-8 text-3xl text-white text-center mt-10">
           <span>résumé</span>
         </h2>
         <div className="grid gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8 ">
@@ -217,14 +217,14 @@ const Resume = () => {
             </div>
             <ol
               // data-aos="fade-up"
-              className="relative border-s border-[#b263ff] dark:border-[#b263ff] ml-6"
+              className="relative border-s border-[#b263ff] dark:border-[#b263ff] ml-6 px-2"
             >
               {experienceItems.map((item, index) => (
                 <li
                   key={index}
-                  className="mb-10 ms-4 bg-gray-500/20 rounded-xl border border-white/[0.1] p-6"
+                  className="mb-4 ms-4 bg-gray-500/20 rounded-xl border border-white/[0.1] p-6"
                 >
-                  <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                   <span className="absolute flex items-center justify-center  w-6 h-6 bg-[#b263ff]  rounded-full -start-3 ring-8 ring-gray-800 dark:ring-gray-900">
                     <svg
                       className="w-2.5 h-2.5 text-white"
                       aria-hidden="true"

@@ -10,9 +10,9 @@ function Project() {
 
   return (
     <section>
-      <div className="container mx-auto py-8">
+      <div className="container mx-auto py-[60px] px-2">
         <div className="flex flex-col gap-4 ">
-          <h2 className="text-2xl lg:text-3xl text-white text-center">
+          <h2 className="text-2xl lg:text-3xl text-white text-center mt-10">
             My <span>Projects</span>
           </h2>
           <p className="text-gray-500 text-center">
