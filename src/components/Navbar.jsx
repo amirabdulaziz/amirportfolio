@@ -76,12 +76,12 @@ const Navbar = () => {
   };
 
   return (
-    <div
-      className={`sticky top-0 z-10 flex justify-between items-center text-white mx-auto h-24 px-4 text-l transition-all duration-300 ${
-        scrollY > 0 ? "bg-[#20242d]" : "bg-transparent"
-      }`}
-    >
-      <div className="container max-w-[115vh] flex justify-between items-center mx-auto px-2 py-8">
+<div
+  className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center text-white h-24 px-4 text-l transition-all duration-300 ${
+    scrollY > 0 ? "bg-[#20242d]" : "bg-transparent"
+  }`}
+>
+  <div className="container max-w-[115vh] flex justify-between items-center mx-auto px-2 py-8">
         <h1
           className="w-full text-xl font-bold primary-color"
           onClick={scrollToTop}

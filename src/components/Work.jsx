@@ -319,7 +319,7 @@ const Work = () => {
             </div>
           </div>
           <div className="flex text-center mx-auto justify-center items-center">
-            <h3 className="primary-color text-xs mt-20">
+            <h3 className="primary-color text-sm mt-20">
               <button
                 // id="ClickHereToViewMoreProjects"
                 onClick={scrollToTopandRedirect}

@@ -1,365 +1,225 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Experience = () => {
+  const [showAll, setShowAll] = useState(false);
+
+  const experienceItems = [
+    {
+      date: "(Sept 2025 - Present)",
+      title: "Software Engineer @ Management and Science University",
+      description: [],
+      skills: ["PHP", "Git"],
+      current: true,
+    },
+    {
+      date: "(May 2025 - Aug 2025)",
+      title: "Software Developer @ MN Solutions Sdn Bhd",
+      description: [
+        "Developed backend application for VoxHero using Flask (Python) and MongoDB, including reporting and dashboard webhooks and APIs.",
+        "Collaborated on bug fixes for MDTax system using OutSystems in partnership with MDEC, ensuring system stability and performance.",
+        "Engaged in daily Agile ceremonies including sprint planning, reviews, and retrospectives, contributing to iterative development, continuous feedback integration, and timely feature delivery.",
+        "Developed reusable components and implemented clean code practices to improve maintainability and facilitate faster development cycles",
+        "Participated in peer code reviews and knowledge-sharing sessions to foster team growth and code quality.",
+        "Collaborated with QA and DevOps teams to support automated testing and deployment pipelines, reducing manual errors and ensuring seamless CI/CD workflows.",
+      ],
+      skills: [
+        "Flask Python",
+        "NodeJs",
+        "TailwindCss",
+        "Postman",
+        "Git",
+        "Jira",
+        "Code Review",
+        "AXIOS API",
+        "Outsystems",
+        "Figma",
+      ],
+    },
+    {
+      date: "(Sept 2024 - Feb 2025)",
+      title: "ICT Intern | Frontend developer @ PKT Logistics Sdn Bhd",
+      description: [
+        "Design and build user-friendly UI components for new modules in the Services Portal (E-Forms).",
+        "Collaborated with backend developers for seamless API integration using Axios.",
+        "Optimize front-end performance and guarantee cross-browser compatibility for a smooth user experience.",
+      ],
+      skills: [
+        "VueJs",
+        "TailwindCss",
+        "Postman",
+        "Git",
+        "Web Design",
+        "Code Review",
+        "Unit Testing",
+        "AXIOS API",
+        "Tailwind Css",
+        "Figma",
+        "Git",
+        "Docker",
+      ],
+    },
+    {
+      date: "(July 2021 - july 2022)",
+      title: "Store Crew @ 7-Eleven",
+      description: [
+        "Executes assigned tasks to maintain store standards.",
+        "Provides customer service aligned with 7-Eleven standards.",
+        "Handles cashiering, ordering, and training as directed by the Store Manager/Assistant Manager.",
+      ],
+      skills: [
+        "Customer Service/Assist",
+        "Teamwork",
+        "Communication",
+        "Money Handling",
+        "Stock Take",
+      ],
+    },
+    {
+      date: "(July 2021 - july 2022)",
+      title: "Junior Programmer @ Akla Services Sdn Bhd",
+      description: [
+        "Designing, developing, maintaining, and analyzing web applications and mobile apps, both front end and back end.",
+        "Design ul/UX prototype.",
+        "Support for customer services from IT.",
+        "Handling documentation such as user data and profiling.",
+      ],
+      skills: [
+        "Web Design",
+        "Code Review",
+        "Unit Testing",
+        "Database report",
+        "SQL",
+        "Ionic ReactJs",
+        "Tailwind Css",
+        "Next.Js",
+        "Figma",
+        "Git",
+        "Report Analysis",
+      ],
+    },
+    {
+      date: "(May 2021 - july 2021)",
+      title: "Internship @ Akla Services Sdn Bhd",
+      description: [
+        "Sustaining and updating mobile and web apps.",
+        "Support for customer services from IT.",
+        "Handling documentation such as user data and profiling.",
+      ],
+      skills: [
+        "Web Design",
+        "Code Review",
+        "Unit Testing",
+        "Database report",
+        "SQL",
+        "Ionic ReactJs",
+        "Tailwind Css",
+        "Figma",
+        "Git",
+        "Report Analysis",
+      ],
+    },
+  ];
 
   return (
     <section id="experience">
-      <div className="container mx-auto items-center h-auto py-[200px] px-10">
+      <div className="container mx-auto items-center py-[200px] px-10">
         <h2 className="mb-8 text-3xl text-white text-center">
           My <span>Experience</span>
         </h2>
-        <ol
-          data-aos="fade-up"
-          class="relative border-s border-[#b263ff] dark:border-[#b263ff] "
-        >
-              <li class="mb-10 ms-4 bg-gray-500/20 rounded-xl border border-white/[0.1] p-6">
-                <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-[#b263ff] dark:border-[#b263ff] dark:bg-[#b263ff]"></div>
-                <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                  (Sept 2025 - Present)
-                </time>
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                  Software Engineer @ Management and Science University
-                </h3>
-                <div
-                  data-aos="fade-right"
-                  className="text-base font-normal text-gray-500 dark:text-gray-400"
+        <div data-aos="fade-up" data-aos-delay="300">
+          <ol
+            // data-aos="fade-up"
+            className="relative border-s border-[#b263ff] dark:border-[#b263ff]"
+          >
+            {experienceItems.map((item, index) => {
+              const isHidden = !showAll && index >= 3;
+
+              return (
+                <li
+                  key={index}
+                  className={`mb-10 ms-6 transition-all duration-500 ease-out ${
+                    isHidden
+                      ? "max-h-0 opacity-0 overflow-hidden transform -translate-y-4"
+                      : "max-h-[2000px] opacity-100 transform translate-y-0"
+                  }`}
+                  style={{
+                    transitionDelay:
+                      showAll && index >= 3 ? `${(index - 3) * 150}ms` : "0ms",
+                  }}
                 >
-                  <ul>
-                    <li className="text-sm"></li>
-                  </ul>
-                </div>
-                <div
-                  data-aos="fade-left"
-                  className="flex gap-2 flex-wrap py-2 items-center text-white font-light"
-                >
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    PHP
+                  <span className="absolute flex items-center justify-center ml-[-25px] w-6 h-6 bg-[#b263ff] rounded-full -start-3 ring-8 ring-gray-800 dark:ring-gray-900">
+                    <svg
+                      className="w-2.5 h-2.5 text-white"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                    </svg>
+                  </span>
+
+                  <div className="bg-gray-500/20 rounded-xl border border-white/[0.1] p-6">
+                    <h3 className="flex items-center mb-1 text-lg font-semibold text-white">
+                      {item.title}
+                      {item.current && (
+                        <span className="bg-[#b263ff] text-white text-sm font-medium me-2 px-2.5 py-0.5 rounded-sm ms-3">
+                          Current
+                        </span>
+                      )}
+                    </h3>
+                    <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                      {item.date}
+                    </time>
+
+                    {item.description.length > 0 && (
+                      <div
+                        // data-aos="fade-right"
+                        className="mb-4 text-base font-normal text-gray-400"
+                      >
+                        <ul className="space-y-1">
+                          {item.description.map((desc, descIndex) => (
+                            <li key={descIndex} className="text-sm">
+                              • {desc}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    <div
+                      // data-aos="fade-left"
+                      className="flex gap-2 flex-wrap items-center text-white font-light"
+                    >
+                      {item.skills.map((skill, skillIndex) => (
+                        <div
+                          key={skillIndex}
+                          className="inline-flex rounded-sm items-center rounded-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80"
+                        >
+                          {skill}
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    Git
-                  </div>
-                </div>
-              </li>
-              <li class="mb-10 ms-4 bg-gray-500/20 rounded-xl border border-white/[0.1] p-6">
-                <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-[#b263ff] dark:border-[#b263ff] dark:bg-[#b263ff]"></div>
-                <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                  (May 2025 - Aug 2025)
-                </time>
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                  Software Developer @ MN Solutions Sdn Bhd
-                </h3>
-                <div
-                  data-aos="fade-right"
-                  className="text-base font-normal text-gray-500 dark:text-gray-400"
-                >
-                  <ul>
-                    <li className="text-sm">
-                      Developed backend application for VoxHero using Flask
-                      (Python) and MongoDB, including reporting and dashboard
-                      webhooks and APIs.
-                    </li>
-                    <li className="text-sm">
-                      Collaborated on bug fixes for MDTax system using
-                      OutSystems in partnership with MDEC, ensuring system
-                      stability and performance.
-                    </li>
-                    <li className="text-sm">
-                      Engaged in daily Agile ceremonies including sprint
-                      planning, reviews, and retrospectives, contributing to
-                      iterative development, continuous feedback integration,
-                      and timely feature delivery.
-                    </li>
-                    <li className="text-sm">
-                      Developed reusable components and implemented clean code
-                      practices to improve maintainability and facilitate faster
-                      development cycles
-                    </li>
-                    <li className="text-sm">
-                      Participated in peer code reviews and knowledge-sharing
-                      sessions to foster team growth and code quality.
-                    </li>
-                    <li className="text-sm">
-                      Collaborated with QA and DevOps teams to support automated
-                      testing and deployment pipelines, reducing manual errors
-                      and ensuring seamless CI/CD workflows.
-                    </li>
-                  </ul>
-                </div>
-                <div
-                  data-aos="fade-left"
-                  className="flex gap-2 flex-wrap py-2 items-center text-white font-light"
-                >
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    Flask Python
-                  </div>
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    NodeJs
-                  </div>
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    TailwindCss
-                  </div>
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    Postman
-                  </div>
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    Git
-                  </div>
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    Jira
-                  </div>
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    Code Review
-                  </div>
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    AXIOS API
-                  </div>
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    Outsystems
-                  </div>
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    Figma
-                  </div>
-                </div>
-              </li>
-              <li class="mb-10 ms-4 bg-gray-500/20 rounded-xl border border-white/[0.1] p-6">
-                <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-[#b263ff] dark:border-[#b263ff] dark:bg-[#b263ff]"></div>
-                <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                  (Sept 2024 - Feb 2025)
-                </time>
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                  ICT Intern | Frontend developer @ PKT Logistics Sdn Bhd
-                </h3>
-                <div
-                  data-aos="fade-right"
-                  className="text-base font-normal text-gray-500 dark:text-gray-400"
-                >
-                  <ul>
-                    <li className="text-sm">
-                      Design and build user-friendly UI components for new
-                      modules in the Services Portal (E-Forms).
-                    </li>
-                    <li className="text-sm">
-                      Collaborated with backend developers for seamless API
-                      integration using Axios.
-                    </li>
-                    <li className="text-sm">
-                      Optimize front-end performance and guarantee cross-browser
-                      compatibility for a smooth user experience.
-                    </li>
-                  </ul>
-                </div>
-                <div
-                  data-aos="fade-left"
-                  className="flex gap-2 flex-wrap py-2 items-center text-white font-light"
-                >
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    VueJs
-                  </div>
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    TailwindCss
-                  </div>
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    Postman
-                  </div>
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    Git
-                  </div>
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    Web Design
-                  </div>
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    Code Review
-                  </div>
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    Unit Testing
-                  </div>
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    AXIOS API
-                  </div>
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    Tailwind Css
-                  </div>
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    Figma
-                  </div>
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    Git
-                  </div>
-                  <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                    Docker
-                  </div>
-                </div>
-              </li>
-          <li class="mb-10 ms-4 bg-gray-500/20 rounded-xl border border-white/[0.1] p-6">
-            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-[#b263ff] dark:border-[#b263ff] dark:bg-[#b263ff]"></div>
-            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-              (July 2021 - july 2022) 
-            </time>
-            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-             Store Crew @ 7-Eleven
-            </h3>
-            <div
-              data-aos="fade-right"
-              className="text-base font-normal text-gray-500 dark:text-gray-400"
+                </li>
+              );
+            })}
+          </ol>
+
+
+        {experienceItems.length > 3 && (
+          <div className="text-center mt-8">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="primary-color"
             >
-              <ul>
-                <li className="text-sm">
-                Executes assigned tasks to maintain store standards.
-                </li>
-                <li className="text-sm">Provides customer service aligned with 7-Eleven standards.</li>
-                <li className="text-sm">
-                Handles cashiering, ordering, and training as directed by the Store Manager/Assistant Manager.
-                </li>
-              </ul>
-            </div>
-            <div
-              data-aos="fade-left"
-              className="flex gap-2 flex-wrap py-2 items-center text-white font-light"
-            >
-               <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Customer Service/Assist
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Teamwork
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Communication
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Money Handling
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Stock Take
-              </div>
-            </div>
-          </li>
-          <li class="mb-10 ms-4 bg-gray-500/20 rounded-xl border border-white/[0.1] p-6">
-            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-[#b263ff] dark:border-[#b263ff] dark:bg-[#b263ff]"></div>
-            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-              (July 2021 - july 2022)
-            </time>
-            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-              Junior Programmer @ Akla Services Sdn Bhd
-            </h3>
-            <div
-              data-aos="fade-right"
-              className="text-base font-normal text-gray-500 dark:text-gray-400"
-            >
-              <ul>
-                <li className="text-sm">
-                  Designing, developing, maintaining, and analyzing web
-                  applications and mobile apps, both front end and back end.
-                </li>
-                <li className="text-sm">Design ul/UX prototype.</li>
-                <li className="text-sm">
-                  Support for customer services from IT.
-                </li>
-                <li className="text-sm">
-                  Handling documentation such as user data and profiling.
-                </li>
-              </ul>
-            </div>
-            <div
-              data-aos="fade-left"
-              className="flex gap-2 flex-wrap py-2 items-center text-white font-light"
-            >
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Web Design
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Code Review
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Unit Testing
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Database report
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                SQL
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Ionic ReactJs
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Tailwind Css
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Next.Js
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Figma
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Git
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Report Analysis
-              </div>
-            </div>
-          </li>
-          <li class="mb-10 ms-4 bg-gray-500/20 rounded-xl border border-white/[0.1] p-6">
-            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border  border-[#b263ff] dark:border-[#b263ff] dark:bg-[#b263ff]"></div>
-            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-              (May 2021 - july 2021)
-            </time>
-            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-              Internship @ Akla Services Sdn Bhd
-            </h3>
-            <div
-              data-aos="fade-right"
-              className="text-base font-normal text-gray-500 dark:text-gray-400"
-            >
-              <ul>
-                <li className="text-sm">
-                  Sustaining and updating mobile and web apps.
-                </li>
-                <li className="text-sm">
-                  Support for customer services from IT.
-                </li>
-                <li className="text-sm">
-                  Handling documentation such as user data and profiling.
-                </li>
-              </ul>
-            </div>
-            <div
-              data-aos="fade-left"
-              className="flex gap-2 flex-wrap py-2 items-center text-white font-light"
-            >
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Web Design
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Code Review
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Unit Testing
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Database report
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                SQL
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Ionic ReactJs
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Tailwind Css
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Figma
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Git
-              </div>
-              <div className="inline-flex rounded-sm items-center rouned-md px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 cursor-default border-transparent bg-primary-color text-primary-foreground shadow hover:bg-primary/80">
-                Report Analysis
-              </div>
-            </div>
-          </li>
-        </ol>
+              <span className="px-6 py-3 primary-color rounded-lg hover:bg-[#9b4fdb] transition-all duration-300 font-medium transform hover:scale-105 active:scale-95">
+                {showAll ? "Show Less Experience ↑" : "View More Experience ↓"}
+              </span>
+            </button>
+          </div>
+        )}
       </div>
+    </div>
     </section>
   );
 };
