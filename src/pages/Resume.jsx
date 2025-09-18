@@ -69,7 +69,7 @@ const Resume = () => {
       ],
     },
     {
-      date: "(July 2021 - july 2022)",
+      date: "(July 2021 - October 2021)",
       title: "Store Crew @ 7-Eleven",
       description: [
         "Executes assigned tasks to maintain store standards.",
