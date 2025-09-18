@@ -42,7 +42,7 @@ const Hero = () => {
             </div>
           </div>
           <div className="flex flex-col justify-center items-center px-2 max-w-full">
-            <div className=" flex justify-right items-center">
+            <div className=" flex justify-right items-center" data-aos="fade-left">
               <img
                 alt="Amir"
                 src={me2}
