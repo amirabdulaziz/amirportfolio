@@ -36,7 +36,7 @@ return (
       </div>
       <div className="flex flex-col justify-center items-center px-2">
         <div className=" flex justify-right items-center">
-          <img alt="Amir" src={me2} className="object-contain w-[400px] ml-[40px]" />
+          <img alt="Amir" src={me2} className="object-contain w-[400px] ml-[40px] mt-[40px] md:mt-0" />
         </div>
         <div data-aos="fade-left" className="mt-4">
           <h3 className="primary-color text-lg md:block">
