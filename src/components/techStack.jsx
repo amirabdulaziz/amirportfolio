@@ -16,26 +16,25 @@ import { RiVuejsFill } from "react-icons/ri";
 const TechStack = () => {
   return (
     <section className="" id="stack">
-      <div className="container mx-auto max-w-full py-[200px] text-white h-auto">
+      <div className="container mx-auto max-w-full py-[200px] text-white h-auto px-4">
         <div
           data-aos="zoom-in-up"
-          className=" max-w-[70vh] mx-auto px-10 space-y-2"
+          className="max-w-[70vh] mx-auto px-4 md:px-10 space-y-2"
         >
           <div className="text-center">
-            {" "}
             <h3 className="text-4xl font-semibold mb-5">
               Tech <span>Stack</span>
-            </h3>{" "}
+            </h3>
             <p className="text-gray-500 py-6">
-              Curious about my <span className="primary-color">stack?</span>{" "}
+              Curious about my <span className="primary-color">stack?</span>
             </p>
           </div>
-          <div className="flex grid grid-cols-2 gap-4">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="">
-              {" "}
               <p className="primary-color py-6">Front end Stack</p>
             </div>
-            <div className="flex flex-cols gap-4">
+            <div className="flex flex-wrap gap-4">
               <div className="flex flex-col items-center">
                 <IoLogoIonic className="text-4xl mb-2" />
                 <p>Ionic</p>
@@ -54,12 +53,12 @@ const TechStack = () => {
               </div>
             </div>
           </div>
-          <div className="flex grid grid-cols-2 gap-4">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="">
-              {" "}
               <p className="primary-color py-6">Styling Stack</p>
             </div>
-            <div className="flex flex-cols gap-4">
+            <div className="flex flex-wrap gap-4">
               <div className="flex flex-col items-center">
                 <RiTailwindCssFill className="text-4xl mb-2" />
                 <p>Tailwind CSS</p>
@@ -71,12 +70,11 @@ const TechStack = () => {
             </div>
           </div>
 
-          <div className="flex grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="">
-              {" "}
               <p className="primary-color py-6">Backend end Stack</p>
             </div>
-            <div className="flex flex-cols gap-4">
+            <div className="flex flex-wrap gap-4">
               <div className="flex flex-col items-center">
                 <FaLaravel className="text-4xl mb-2" />
                 <p>Laravel</p>
@@ -96,19 +94,18 @@ const TechStack = () => {
             </div>
           </div>
 
-          <div className="flex grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="">
-              {" "}
               <p className="primary-color py-6">Other Stack</p>
             </div>
-            <div className="flex flex-cols gap-4">
+            <div className="flex flex-wrap gap-4">
               <div className="flex flex-col items-center">
                 <IoLogoFirebase className="text-4xl mb-2" />
                 <p>Firebase</p>
               </div>
               <div className="flex flex-col items-center">
                 <FaGithub className="text-4xl mb-2" />
-                <p>Github</p>
+                <p>GitHub</p>
               </div>
               <div className="flex flex-col items-center">
                 <FaFigma className="text-4xl mb-2" />

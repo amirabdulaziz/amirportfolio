@@ -13,11 +13,11 @@ const Navbar = () => {
   const [scrollY, setScrollY] = useState(0);
   const [projectDropdownOpen, setProjectDropdownOpen] = useState(false);
   const handleNav = () => {
-  setNav(!nav);
-  if (nav) { 
-    setProjectDropdownOpen(false);
-  }
-};
+    setNav(!nav);
+    if (nav) {
+      setProjectDropdownOpen(false);
+    }
+  };
 
   const { value, changeValue } = useContext(SectionContext);
   const history = useHistory();
@@ -27,7 +27,7 @@ const Navbar = () => {
     { name: "Home", value: "home" },
     { name: "About", value: "about" },
     { name: "Experience", value: "experience" },
-    { name: "Project", value: "project" }, 
+    { name: "Project", value: "project" },
     { name: "Stack", value: "stack" },
   ];
 
@@ -83,15 +83,16 @@ const Navbar = () => {
         scrollY > 0 ? "bg-[#20242d]" : "bg-transparent"
       }`}
     >
-      <div className="container max-w-[115vh] flex justify-between items-center mx-auto px-2 py-8">
+      <div className="container mx-auto flex justify-between items-center px-2 py-8">
         <h1
-          className="w-full text-xl font-bold primary-color cursor-pointer"
+          className=" text-xl font-bold primary-color cursor-pointer"
           onClick={scrollToTop}
         >
           amirabdulaziz
         </h1>
 
         {/* Desktop Navbar */}
+
         <ul className="list-none hidden md:flex items-center gap-4">
           {navbarItem.map((item) =>
             item.name === "Project" ? (
@@ -107,36 +108,25 @@ const Navbar = () => {
                 >
                   {item.name}
                 </span>
-                <Menu as="div" className="relative inline-block text-left">
-                  <MenuButton>
-                    <ChevronDownIcon
-                      aria-hidden="true"
-                      className="size-4 text-gray-400 cursor-pointer"
-                    />
-                  </MenuButton>
 
-                  <MenuItems
-                    transition
-                    className="absolute right-0 z-10 mt-2 w-48 origin-top-left rounded-md bg-gray-800 shadow-lg transition
-                             data-closed:scale-95 data-closed:transform data-closed:opacity-0
-                             data-enter:duration-100 data-enter:ease-out
-                             data-leave:duration-75 data-leave:ease-in"
-                  >
+                <div className="relative group">
+                  <ChevronDownIcon
+                    aria-hidden="true"
+                    className="size-4 text-gray-400 cursor-pointer"
+                  />
+
+                  <div className="absolute right-0 top-full mt-2 w-48 bg-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
                     <div className="py-1">
-                      <MenuItem>
-                        <Link
-                          to="/more-project"
-                          onClick={() => {
-                            scrollToTop();
-                          }}
-                          className="block px-4 py-2 text-sm text-gray-300"
-                        >
-                          More Project
-                        </Link>
-                      </MenuItem>
+                      <Link
+                        to="/more-project"
+                        onClick={scrollToTop}
+                        className="block px-4 py-2 text-sm text-gray-300 hover:text-white transition-colors duration-150"
+                      >
+                        More Project
+                      </Link>
                     </div>
-                  </MenuItems>
-                </Menu>
+                  </div>
+                </div>
               </li>
             ) : (
               <li key={item.value} className="text-sm">
@@ -176,11 +166,9 @@ const Navbar = () => {
           }
         >
           <div className="flex justify-between items-center px-4 py-8">
-            <h1 className="text-xl font-bold primary-color">
-              amirabdulaziz
-            </h1>
-            <AiOutlineClose 
-              size={20} 
+            <h1 className="text-xl font-bold primary-color">amirabdulaziz</h1>
+            <AiOutlineClose
+              size={20}
               onClick={() => {
                 handleNav();
                 setProjectDropdownOpen(false);
@@ -191,90 +179,94 @@ const Navbar = () => {
 
           <ul className="list-none py-2 text-xl">
             {navbarItem.map((item) =>
-            item.name === "Project" ? (
-              <li key={item.value} className="px-4 py-2 text-sm">
-                <div className="flex justify-between items-center">
-                  <span
-                    className={`cursor-pointer ${
-                      isNavItemActive(item.value)
-                        ? "text-white"
-                        : "primary-color"
-                    }`}
-                    onClick={() => handleScrollMobile(item.value)}
-                  >
-                    {item.name}
-                  </span>
-                  <ChevronRightIcon 
-                    className={`size-4 text-gray-400 cursor-pointer transition-transform duration-200 ${
-                      projectDropdownOpen ? 'rotate-90' : ''
-                    }`}
-                    onClick={() => setProjectDropdownOpen(!projectDropdownOpen)}
-                  />
-                </div>
-
-                {/* Animated submenu */}
-                <div
-                  className={`overflow-hidden transition-all duration-200 ${
-                    projectDropdownOpen
-                      ? "max-h-20 opacity-100"
-                      : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <ul className="mt-1 ml-4 border-l border-gray-600 pl-3">
-                    <li>
-                      <Link
-                        to="/more-project"
-                          onClick={() => {
-                            handleNav(); 
-                            setProjectDropdownOpen(false); 
-                          }}
-                        className={`block py-1 text-xs ${
-                          pathname === "/more-project"
-                            ? "text-white"
-                            : "primary-color"
-                        }`}
-                      >
-                        More Project
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            ) : (
+              item.name === "Project" ? (
                 <li key={item.value} className="px-4 py-2 text-sm">
-                    <div 
-                      className="flex justify-between items-center cursor-pointer"
+                  <div className="flex justify-between items-center">
+                    <span
+                      className={`cursor-pointer ${
+                        isNavItemActive(item.value)
+                          ? "text-white"
+                          : "primary-color"
+                      }`}
                       onClick={() => handleScrollMobile(item.value)}
                     >
-                      <span
-                        className={`${
-                          isNavItemActive(item.value)
-                            ? "text-white"
-                            : "primary-color"
-                        }`}
-                      >
-                        {item.name}
-                      </span>
-                      <ChevronRightIcon className="size-4 text-gray-400" />
-                    </div>
-                  </li>
+                      {item.name}
+                    </span>
+                    <ChevronRightIcon
+                      className={`size-4 text-gray-400 cursor-pointer transition-transform duration-200 ${
+                        projectDropdownOpen ? "rotate-90" : ""
+                      }`}
+                      onClick={() =>
+                        setProjectDropdownOpen(!projectDropdownOpen)
+                      }
+                    />
+                  </div>
+
+                  {/* Animated submenu */}
+                  <div
+                    className={`overflow-hidden transition-all duration-200 ${
+                      projectDropdownOpen
+                        ? "max-h-20 opacity-100"
+                        : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <ul className="mt-1 ml-4 border-l border-gray-600 pl-3">
+                      <li>
+                        <Link
+                          to="/more-project"
+                          onClick={() => {
+                            handleNav();
+                            setProjectDropdownOpen(false);
+                          }}
+                          className={`block py-1 text-xs ${
+                            pathname === "/more-project"
+                              ? "text-white"
+                              : "primary-color"
+                          }`}
+                        >
+                          More Project
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              ) : (
+                <li key={item.value} className="px-4 py-2 text-sm">
+                  <div
+                    className="flex justify-between items-center cursor-pointer"
+                    onClick={() => handleScrollMobile(item.value)}
+                  >
+                    <span
+                      className={`${
+                        isNavItemActive(item.value)
+                          ? "text-white"
+                          : "primary-color"
+                      }`}
+                    >
+                      {item.name}
+                    </span>
+                    <ChevronRightIcon className="size-4 text-gray-400" />
+                  </div>
+                </li>
               )
             )}
 
-              <li className="px-4 py-2 text-sm">
-                <Link
-                  to="/resume"
-                  onClick={handleNav}
-                  className="flex justify-between items-center cursor-pointer"
-                >
-                  <span className={`${
+            <li className="px-4 py-2 text-sm">
+              <Link
+                to="/resume"
+                onClick={handleNav}
+                className="flex justify-between items-center cursor-pointer"
+              >
+                <span
+                  className={`${
                     pathname === "/resume" ? "text-white" : "primary-color"
-                  }`}>
-                    Resume
-                  </span>
-                  <ChevronRightIcon className="size-4 text-gray-400" />
-                </Link>
-              </li>
+                  }`}
+                >
+                  Resume
+                </span>
+                <ChevronRightIcon className="size-4 text-gray-400" />
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
