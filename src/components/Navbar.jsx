@@ -27,7 +27,7 @@ const Navbar = () => {
     { name: "Home", value: "home" },
     { name: "About", value: "about" },
     { name: "Experience", value: "experience" },
-    { name: "Project", value: "project" }, // dropdown version
+    { name: "Project", value: "project" }, 
     { name: "Stack", value: "stack" },
   ];
 
@@ -228,7 +228,7 @@ const Navbar = () => {
                             handleNav(); 
                             setProjectDropdownOpen(false); 
                           }}
-                        className={`block py-1 text-sm ${
+                        className={`block py-1 text-xs ${
                           pathname === "/more-project"
                             ? "text-white"
                             : "primary-color"
@@ -242,37 +242,39 @@ const Navbar = () => {
               </li>
             ) : (
                 <li key={item.value} className="px-4 py-2 text-sm">
-                  <div className="flex justify-between items-center">
-                    <span
-                      className={`cursor-pointer ${
-                        isNavItemActive(item.value)
-                          ? "text-white"
-                          : "primary-color"
-                      }`}
+                    <div 
+                      className="flex justify-between items-center cursor-pointer"
                       onClick={() => handleScrollMobile(item.value)}
                     >
-                      {item.name}
-                    </span>
-                    <ChevronRightIcon className="size-4 text-gray-400" />
-                  </div>
-                </li>
+                      <span
+                        className={`${
+                          isNavItemActive(item.value)
+                            ? "text-white"
+                            : "primary-color"
+                        }`}
+                      >
+                        {item.name}
+                      </span>
+                      <ChevronRightIcon className="size-4 text-gray-400" />
+                    </div>
+                  </li>
               )
             )}
 
-            <li className="px-4 py-2 text-sm">
-              <div className="flex justify-between items-center">
+              <li className="px-4 py-2 text-sm">
                 <Link
                   to="/resume"
                   onClick={handleNav}
-                  className={`cursor-pointer ${
-                    pathname === "/resume" ? "text-white" : "primary-color"
-                  }`}
+                  className="flex justify-between items-center cursor-pointer"
                 >
-                  Resume
+                  <span className={`${
+                    pathname === "/resume" ? "text-white" : "primary-color"
+                  }`}>
+                    Resume
+                  </span>
+                  <ChevronRightIcon className="size-4 text-gray-400" />
                 </Link>
-                <ChevronRightIcon className="size-4 text-gray-400" />
-              </div>
-            </li>
+              </li>
           </ul>
         </div>
       </div>
