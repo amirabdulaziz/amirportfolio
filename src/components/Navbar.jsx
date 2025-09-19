@@ -76,7 +76,7 @@ const Navbar = () => {
 
   return (
     <div
-      className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center text-white h-24 px-4 text-l transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 flex justify-between items-center text-white px-4 text-l transition-all duration-300 ${
         scrollY > 0 ? "bg-[#20242d]" : "bg-transparent"
       }`}
     >
