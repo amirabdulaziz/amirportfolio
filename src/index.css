@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,25 +7,28 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
-  background-color: #20242d;
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
+  background-color: #000;
+  color: #f5f5f7;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui, sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
 }
 
-span,
 .primary-color {
-  background-image: linear-gradient(to right, #b263ff, #c491f7);
-  -webkit-background-clip: text;
-  color: transparent;
+  color: #2997ff;
 }
 
 .bg-primary-color {
-  background-color: #b263ff;
+  background-color: rgba(255, 255, 255, 0.08);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-.bg-secondary-color {
-  background-image: #b263ff;
+/* two-tone headings: "About [Me]" */
+h2 > span,
+h3 > span {
+  color: #86868b;
 }
 
 .fade-in {
@@ -36,4 +39,3 @@ span,
   opacity: 0;
   transition: opacity 1s ease;
 }
-
