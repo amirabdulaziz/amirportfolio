@@ -1,31 +1,38 @@
 import React from "react";
+import { Element } from "react-scroll";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Experience from "../components/Experience";
 import Work from "../components/Work";
-import Footer from "../components/Footer";
 import Tech from "../components/techStack";
-import { Element } from "react-scroll";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
-    <div>
-      <Element name="home" className="element">
+    <div className="bg-black text-white">
+      <Element name="home" className="block">
         <Hero />
       </Element>
-      <Element name="about" className="element">
+
+      <Element name="about" className="block">
         <About />
       </Element>
-      <Element name="experience" className="element">
+
+      <Element name="experience" className="block">
         <Experience />
       </Element>
-      <Element name="project" className="element">
+
+      <Element name="project" className="block">
         <Work />
       </Element>
-      <Element name="tech stack" className="element">
+
+      <Element name="stack" className="block">
         <Tech />
       </Element>
-      <Footer />
+
+      <Element name="contact" className="block">
+        <Footer />
+      </Element>
     </div>
   );
 };

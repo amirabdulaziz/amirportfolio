@@ -1,14 +1,27 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import { animateScroll as scroll, scroller } from "react-scroll";
 import { SectionContext } from "../context/SectionContext";
 import { ChevronDownIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 
+const navbarItems = [
+  { name: "Home", value: "home" },
+  { name: "About", value: "about" },
+  { name: "Experience", value: "experience" },
+  { name: "Project", value: "project" },
+  { name: "Stack", value: "stack" },
+];
+
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
   const [projectDropdownOpen, setProjectDropdownOpen] = useState(false);
+
+  const { value, changeValue } = useContext(SectionContext);
+  const history = useHistory();
+  const { pathname } = useLocation();
+  const pendingTargetRef = useRef(null);
 
   const closeMobileMenu = () => {
     setNav(false);
@@ -23,57 +36,80 @@ const Navbar = () => {
     }
   };
 
-  const { value, changeValue } = useContext(SectionContext);
-  const history = useHistory();
-  const { pathname } = useLocation();
+  const performScroll = (target) => {
+    if (!target || target === "home") {
+      scroll.scrollToTop({ duration: 500, smooth: "easeInOutCubic" });
+      return;
+    }
 
-  const navbarItem = [
-    { name: "Home", value: "home" },
-    { name: "About", value: "about" },
-    { name: "Experience", value: "experience" },
-    { name: "Project", value: "project" },
-    { name: "Stack", value: "stack" },
-  ];
-
-  const scrollToTop = () => {
-    scroll.scrollToTop();
-    closeMobileMenu();
+    scroller.scrollTo(target, {
+      duration: 550,
+      delay: 0,
+      smooth: "easeInOutCubic",
+      offset: -76,
+    });
   };
 
+  // Scroll when arriving back on "/" from another route
   useEffect(() => {
-    if (pathname === "/") {
-      if (value === "home") scroll.scrollToTop({ duration: 100 });
-      else if (value) scroller.scrollTo(value, { smooth: true, duration: 500, offset: -80 });
+    if (pathname === "/" && pendingTargetRef.current) {
+      const target = pendingTargetRef.current;
+      pendingTargetRef.current = null;
+
+      const timer = setTimeout(() => {
+        performScroll(target);
+      }, 60);
+
+      return () => clearTimeout(timer);
     }
 
     if (pathname === "/resume" || pathname === "/more-project") {
       scroll.scrollToTop({ duration: 1 });
-      changeValue("");
     }
-  }, [pathname, value, changeValue]);
+  }, [pathname]);
 
-  const handleScroll = (sectionName) => {
-    if (pathname !== "/") {
-      history.push("/");
+  // Also respond when SectionContext value changes while already on "/"
+  useEffect(() => {
+    if (pathname === "/" && value) {
+      performScroll(value);
+    }
+  }, [value, pathname]);
+
+  const navigateToSection = (sectionName, fromMobile = false) => {
+    if (fromMobile) {
+      closeMobileMenu();
     }
     changeValue(sectionName);
+
+    if (pathname !== "/") {
+      pendingTargetRef.current = sectionName;
+      history.push("/");
+    } else {
+      performScroll(sectionName);
+    }
   };
 
-  const handleScrollMobile = (sectionName) => {
-    closeMobileMenu();
-    if (pathname !== "/") {
-      history.push("/");
+  const handleBrandClick = (fromMobile = false) => {
+    if (fromMobile) {
+      closeMobileMenu();
     }
-    changeValue(sectionName);
+    changeValue("home");
+
+    if (pathname !== "/") {
+      pendingTargetRef.current = "home";
+      history.push("/");
+    } else {
+      scroll.scrollToTop({ duration: 500, smooth: "easeInOutCubic" });
+    }
   };
 
   useEffect(() => {
-    const onScroll = () => setScrollY(window.scrollY);
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Prevent background page scrolling while mobile drawer is open
   useEffect(() => {
     document.body.style.overflow = nav ? "hidden" : "";
     return () => {
@@ -87,50 +123,57 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 text-white transition-all duration-300 ${
-        scrollY > 10
-          ? "bg-[#20242d]/90 backdrop-blur-md border-b border-white/10 shadow-lg"
-          : "bg-transparent"
+        scrolled
+          ? "bg-black/80 backdrop-blur-xl border-b border-white/[0.08]"
+          : "bg-transparent border-b border-transparent"
       }`}
     >
-      <div className="container mx-auto flex justify-between items-center px-4 md:px-6 py-5 md:py-7">
+      <div className="container mx-auto max-w-6xl flex justify-between items-center px-6 py-5 md:py-6">
         <button
           type="button"
-          onClick={scrollToTop}
-          className="text-lg md:text-xl font-bold tracking-tight primary-color cursor-pointer text-left"
+          onClick={() => handleBrandClick(false)}
+          className="text-lg md:text-xl font-semibold tracking-tight text-white hover:text-[#66b5ff] transition-colors cursor-pointer text-left"
         >
           amirabdulaziz
         </button>
 
         {/* Desktop Navbar */}
         <nav aria-label="Primary navigation" className="hidden md:block">
-          <ul className="list-none flex items-center gap-6">
-            {navbarItem.map((item) =>
+          <ul className="list-none flex items-center gap-7">
+            {navbarItems.map((item) =>
               item.name === "Project" ? (
                 <li key={item.value} className="text-sm relative group">
                   <div className="flex items-center gap-1">
                     <button
                       type="button"
-                      onClick={() => handleScroll(item.value)}
+                      onClick={() => navigateToSection(item.value, false)}
                       className={`cursor-pointer transition-colors ${
                         isNavItemActive(item.value)
-                          ? "text-white font-medium"
-                          : "primary-color hover:text-white"
+                          ? "text-[#2997ff] font-medium"
+                          : "text-neutral-300 hover:text-white"
                       }`}
                     >
                       {item.name}
                     </button>
                     <ChevronDownIcon
                       aria-hidden="true"
-                      className="size-4 text-gray-400 group-hover:text-white transition-transform duration-200 group-hover:rotate-180"
+                      className="size-4 text-neutral-400 group-hover:text-white transition-transform duration-200 group-hover:rotate-180"
                     />
                   </div>
 
-                  <div className="absolute right-0 top-full pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20">
-                    <div className="bg-[#252a34] border border-white/10 rounded-xl shadow-xl py-1.5 overflow-hidden">
+                  <div className="absolute right-0 top-full pt-2.5 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20">
+                    <div className="bg-[#0c0c0e]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl py-1.5 overflow-hidden">
                       <Link
                         to="/more-project"
-                        onClick={scrollToTop}
-                        className="block px-4 py-2.5 text-sm text-gray-300 hover:bg-white/5 hover:text-white transition-colors"
+                        onClick={() => {
+                          changeValue("");
+                          scroll.scrollToTop({ duration: 1 });
+                        }}
+                        className={`block px-4 py-2.5 text-sm transition-colors ${
+                          pathname === "/more-project"
+                            ? "text-[#2997ff] bg-white/[0.06] font-medium"
+                            : "text-neutral-300 hover:bg-white/[0.06] hover:text-white"
+                        }`}
                       >
                         More Project
                       </Link>
@@ -141,11 +184,11 @@ const Navbar = () => {
                 <li key={item.value} className="text-sm">
                   <button
                     type="button"
-                    onClick={() => handleScroll(item.value)}
+                    onClick={() => navigateToSection(item.value, false)}
                     className={`cursor-pointer transition-colors ${
                       isNavItemActive(item.value)
-                        ? "text-white font-medium"
-                        : "primary-color hover:text-white"
+                        ? "text-[#2997ff] font-medium"
+                        : "text-neutral-300 hover:text-white"
                     }`}
                   >
                     {item.name}
@@ -157,10 +200,14 @@ const Navbar = () => {
             <li className="text-sm">
               <Link
                 to="/resume"
-                className={`px-3.5 py-1.5 rounded-lg border transition-all ${
+                onClick={() => {
+                  changeValue("");
+                  scroll.scrollToTop({ duration: 1 });
+                }}
+                className={`px-4 py-1.5 rounded-full border text-xs font-medium transition-all ${
                   pathname === "/resume"
-                    ? "bg-white/15 text-white border-white/25"
-                    : "primary-color border-white/15 hover:border-white/30 hover:text-white"
+                    ? "bg-[#2997ff]/15 text-[#66b5ff] border-[#2997ff]/40"
+                    : "text-neutral-200 border-white/15 bg-white/[0.03] hover:bg-white/[0.08] hover:border-white/25 hover:text-white"
                 }`}
               >
                 Resume
@@ -169,13 +216,13 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        {/* Mobile Hamburger Button */}
+        {/* Mobile Menu Button */}
         <button
           type="button"
           aria-label="Open menu"
           aria-expanded={nav}
           onClick={handleNavToggle}
-          className="md:hidden p-2 -mr-2 rounded-lg text-gray-200 hover:bg-white/10 active:scale-95 transition"
+          className="md:hidden p-2 -mr-2 rounded-full text-neutral-200 hover:bg-white/[0.08] active:scale-95 transition"
         >
           <AiOutlineMenu size={22} />
         </button>
@@ -185,7 +232,7 @@ const Navbar = () => {
       <div
         onClick={closeMobileMenu}
         aria-hidden="true"
-        className={`md:hidden fixed inset-0 z-40 bg-black/60 backdrop-blur-xs transition-opacity duration-300 ${
+        className={`md:hidden fixed inset-0 z-40 bg-black/75 backdrop-blur-xs transition-opacity duration-300 ${
           nav ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
         }`}
       />
@@ -193,47 +240,48 @@ const Navbar = () => {
       {/* Mobile Slide-Over Drawer */}
       <aside
         aria-label="Mobile navigation"
-        className={`md:hidden fixed top-0 right-0 z-50 h-dvh w-[82%] max-w-sm bg-[#1c2029] border-l border-white/10 text-gray-200 shadow-2xl flex flex-col justify-between transition-transform duration-300 ease-out ${
+        className={`md:hidden fixed top-0 right-0 z-50 h-dvh w-[84%] max-w-sm bg-[#09090b] border-l border-white/10 text-neutral-200 shadow-2xl flex flex-col justify-between transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           nav ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div>
           {/* Drawer Header */}
-          <div className="flex justify-between items-center px-5 py-5 border-b border-white/10">
-            <span
-              onClick={scrollToTop}
-              className="text-lg font-bold tracking-tight primary-color cursor-pointer"
+          <div className="flex justify-between items-center px-6 py-5 border-b border-white/[0.08]">
+            <button
+              type="button"
+              onClick={() => handleBrandClick(true)}
+              className="text-lg font-semibold tracking-tight text-white cursor-pointer"
             >
               amirabdulaziz
-            </span>
+            </button>
             <button
               type="button"
               aria-label="Close menu"
               onClick={closeMobileMenu}
-              className="p-2 -mr-2 rounded-lg text-gray-300 hover:bg-white/10 hover:text-white transition"
+              className="p-2 -mr-2 rounded-full text-neutral-300 hover:bg-white/[0.08] hover:text-white transition"
             >
               <AiOutlineClose size={20} />
             </button>
           </div>
 
-          {/* Drawer Links */}
-          <ul className="list-none px-3 py-4 space-y-1">
-            {navbarItem.map((item) => {
+          {/* Drawer Navigation Links */}
+          <ul className="list-none px-4 py-4 space-y-1">
+            {navbarItems.map((item) => {
               const active = isNavItemActive(item.value);
 
               if (item.name === "Project") {
                 return (
-                  <li key={item.value} className="rounded-xl overflow-hidden">
+                  <li key={item.value} className="rounded-2xl overflow-hidden">
                     <div
-                      className={`flex items-center justify-between rounded-xl px-3 py-3 transition-colors ${
-                        active ? "bg-white/10 text-white" : "hover:bg-white/5"
+                      className={`flex items-center justify-between rounded-2xl px-3.5 py-3 transition-colors ${
+                        active ? "bg-white/[0.07]" : "hover:bg-white/[0.04]"
                       }`}
                     >
                       <button
                         type="button"
-                        onClick={() => handleScrollMobile(item.value)}
+                        onClick={() => navigateToSection(item.value, true)}
                         className={`flex-1 text-left text-base font-medium cursor-pointer ${
-                          active ? "text-white" : "primary-color"
+                          active ? "text-[#2997ff]" : "text-neutral-200"
                         }`}
                       >
                         {item.name}
@@ -246,17 +294,18 @@ const Navbar = () => {
                         onClick={() =>
                           setProjectDropdownOpen(!projectDropdownOpen)
                         }
-                        className="p-1.5 -mr-1 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition"
+                        className="p-1.5 -mr-1 rounded-xl text-neutral-400 hover:text-white hover:bg-white/[0.08] transition"
                       >
                         <ChevronRightIcon
                           className={`size-5 transition-transform duration-200 ${
-                            projectDropdownOpen ? "rotate-90 text-white" : ""
+                            projectDropdownOpen
+                              ? "rotate-90 text-[#2997ff]"
+                              : ""
                           }`}
                         />
                       </button>
                     </div>
 
-                    {/* Submenu */}
                     <div
                       className={`grid transition-all duration-200 ease-out ${
                         projectDropdownOpen
@@ -267,15 +316,19 @@ const Navbar = () => {
                       <div className="overflow-hidden">
                         <Link
                           to="/more-project"
-                          onClick={closeMobileMenu}
-                          className={`ml-4 mr-2 flex items-center justify-between rounded-lg px-3.5 py-2.5 text-sm border-l border-white/15 transition-colors ${
+                          onClick={() => {
+                            closeMobileMenu();
+                            changeValue("");
+                            scroll.scrollToTop({ duration: 1 });
+                          }}
+                          className={`ml-4 mr-2 flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm border-l border-white/15 transition-colors ${
                             pathname === "/more-project"
-                              ? "bg-white/10 text-white font-medium"
-                              : "text-gray-300 hover:bg-white/5 hover:text-white"
+                              ? "bg-white/[0.07] text-[#2997ff] font-medium"
+                              : "text-neutral-300 hover:bg-white/[0.04] hover:text-white"
                           }`}
                         >
                           <span>More Project</span>
-                          <ChevronRightIcon className="size-4 text-gray-500" />
+                          <ChevronRightIcon className="size-4 text-neutral-500" />
                         </Link>
                       </div>
                     </div>
@@ -287,17 +340,19 @@ const Navbar = () => {
                 <li key={item.value}>
                   <button
                     type="button"
-                    onClick={() => handleScrollMobile(item.value)}
-                    className={`w-full flex items-center justify-between rounded-xl px-3 py-3 text-left text-base font-medium transition-colors cursor-pointer ${
+                    onClick={() => navigateToSection(item.value, true)}
+                    className={`w-full flex items-center justify-between rounded-2xl px-3.5 py-3 text-left text-base font-medium transition-colors cursor-pointer ${
                       active
-                        ? "bg-white/10 text-white"
-                        : "primary-color hover:bg-white/5 hover:text-white"
+                        ? "bg-white/[0.07] text-[#2997ff]"
+                        : "text-neutral-200 hover:bg-white/[0.04] hover:text-white"
                     }`}
                   >
                     <span>{item.name}</span>
                     <ChevronRightIcon
                       className={`size-4 transition-transform ${
-                        active ? "text-white translate-x-0.5" : "text-gray-500"
+                        active
+                          ? "text-[#2997ff] translate-x-0.5"
+                          : "text-neutral-500"
                       }`}
                     />
                   </button>
@@ -308,14 +363,18 @@ const Navbar = () => {
         </div>
 
         {/* Drawer Footer CTA */}
-        <div className="p-4 border-t border-white/10">
+        <div className="p-4 border-t border-white/[0.08]">
           <Link
             to="/resume"
-            onClick={closeMobileMenu}
-            className={`w-full flex items-center justify-center rounded-xl py-3 px-4 text-sm font-semibold transition-all ${
+            onClick={() => {
+              closeMobileMenu();
+              changeValue("");
+              scroll.scrollToTop({ duration: 1 });
+            }}
+            className={`w-full flex items-center justify-center rounded-full py-3 px-4 text-sm font-medium transition-all ${
               pathname === "/resume"
-                ? "bg-white text-[#1c2029]"
-                : "bg-white/10 text-white hover:bg-white/15 border border-white/10"
+                ? "bg-[#2997ff] text-white"
+                : "bg-white/[0.06] text-white hover:bg-white/[0.12] border border-white/10"
             }`}
           >
             View Resume

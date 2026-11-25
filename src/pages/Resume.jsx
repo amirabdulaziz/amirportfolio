@@ -1,11 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Footer from "../components/Footer";
+import RevealBlock from "../components/RevealBlock";
 import userprofile from "../assets/me4.png";
 import { FaGithub, FaInstagram, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import DownloadButton from "../components/DownloadButton";
-
-// to prevent the hash from being added
-import { useHistory } from "react-router-dom";
 
 const education = [
   {
@@ -35,6 +33,7 @@ const experienceItems = [
     company: "Management and Science University",
     description: [],
     skills: ["PHP", "Git"],
+    current: true,
   },
   {
     date: "May 2025 - Aug 2025",
@@ -44,7 +43,7 @@ const experienceItems = [
       "Developed backend application for VoxHero using Flask (Python) and MongoDB, including reporting and dashboard webhooks and APIs.",
       "Collaborated on bug fixes for MDTax system using OutSystems in partnership with MDEC, ensuring system stability and performance.",
       "Engaged in daily Agile ceremonies including sprint planning, reviews, and retrospectives, contributing to iterative development, continuous feedback integration, and timely feature delivery.",
-      "Developed reusable components and implemented clean code practices to improve maintainability and facilitate faster development cycles",
+      "Developed reusable components and implemented clean code practices to improve maintainability and facilitate faster development cycles.",
       "Participated in peer code reviews and knowledge-sharing sessions to foster team growth and code quality.",
       "Collaborated with QA and DevOps teams to support automated testing and deployment pipelines, reducing manual errors and ensuring seamless CI/CD workflows.",
     ],
@@ -190,7 +189,12 @@ const skillGroups = [
   },
   {
     title: "Soft skills",
-    items: ["Presentation Skills", "Problem Solving", "Team Work", "Communication"],
+    items: [
+      "Presentation Skills",
+      "Problem Solving",
+      "Team Work",
+      "Communication",
+    ],
   },
 ];
 
@@ -224,8 +228,7 @@ const contacts = [
 
 const Card = ({ children, className = "" }) => (
   <div
-    data-aos="zoom-in-up"
-    className={`rounded-[28px] bg-[#1d1d1f] p-7 md:p-9 ${className}`}
+    className={`h-full rounded-3xl bg-white/[0.03] border border-white/10 p-6 sm:p-8 transition-all duration-300 hover:bg-white/[0.05] hover:border-white/20 ${className}`}
   >
     {children}
   </div>
@@ -236,7 +239,7 @@ const Pills = ({ items }) => (
     {items.map((item) => (
       <li
         key={item}
-        className="rounded-full bg-white/[0.08] px-3 py-1 text-xs text-neutral-300"
+        className="rounded-full bg-white/[0.05] border border-white/[0.08] px-3 py-1 text-xs text-neutral-300"
       >
         {item}
       </li>
@@ -244,81 +247,113 @@ const Pills = ({ items }) => (
   </ul>
 );
 
-const SectionTitle = ({ children }) => (
-  <h3 className="mb-8 mt-20 text-3xl font-semibold tracking-tight text-white md:mb-10 md:mt-28 md:text-5xl">
-    {children}
-  </h3>
+const SectionHeading = ({ eyebrow, title, highlight }) => (
+  <RevealBlock className="mb-8 mt-20 md:mb-10 md:mt-28">
+    <p className="text-xs uppercase tracking-[0.2em] text-neutral-500 mb-2">
+      {eyebrow}
+    </p>
+    <h3 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-white">
+      {title} <span className="text-neutral-500">{highlight}</span>
+    </h3>
+  </RevealBlock>
 );
 
 const Resume = () => {
-  const history = useHistory();
-
-  useEffect(() => {
-    history.replace("/resume");
-  }, [history]);
-
   return (
-    <div>
-      <section className="container mx-auto px-4 pb-24 pt-32 text-white md:pb-32">
-        <div className="mx-auto max-w-5xl">
-          {/* Header */}
-          <div data-aos="fade-up" className="flex flex-col items-center text-center">
+    <div className="min-h-screen bg-black text-white">
+      <section className="container mx-auto max-w-5xl px-6 pb-24 pt-28 md:pb-32 md:pt-36">
+        {/* Header */}
+        <div className="flex flex-col items-center text-center">
+          <div className="reveal-hero reveal-delay-1">
             <img
               alt="Mohamad Ainulamir"
               src={userprofile}
-              className="h-36 w-36 rounded-full object-cover object-center ring-1 ring-white/20"
+              className="h-32 w-32 sm:h-36 sm:w-36 rounded-full object-cover object-top ring-1 ring-white/20"
             />
-            <h2 className="mt-8 text-4xl font-semibold leading-tight tracking-tight md:text-6xl">
-              Mohamad Ainulamir bin Abdul Aziz
-            </h2>
-            <p className="mt-3 text-xl text-[#86868b] md:text-2xl">Software Engineer</p>
-            <div className="mt-8">
-              <DownloadButton />
-            </div>
           </div>
 
-          {/* Education */}
-          <SectionTitle>
-            Education. <span>Where I studied.</span>
-          </SectionTitle>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-            {education.map((e) => (
-              <Card key={e.degree} className="flex flex-col gap-3">
-                <h4 className="text-lg font-semibold leading-snug tracking-tight">
+          <div className="reveal-hero reveal-delay-2">
+            <h2 className="mt-7 text-3xl sm:text-5xl md:text-6xl font-semibold leading-tight tracking-tight text-white">
+              Mohamad Ainulamir bin Abdul Aziz
+            </h2>
+            <p className="mt-3 text-lg sm:text-xl md:text-2xl text-neutral-400">
+              Software Engineer
+            </p>
+          </div>
+
+          <div className="reveal-hero reveal-delay-3 mt-8">
+            <DownloadButton />
+          </div>
+        </div>
+
+        {/* Education */}
+        <SectionHeading
+          eyebrow="Academic Background"
+          title="Education."
+          highlight="Where I studied."
+        />
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+          {education.map((e, index) => (
+            <RevealBlock key={e.degree} delay={index * 100} className="h-full">
+              <Card className="flex flex-col gap-3">
+                <h4 className="text-lg font-semibold leading-snug tracking-tight text-white">
                   {e.degree}
                 </h4>
                 <p className="text-sm text-neutral-300">{e.school}</p>
-                <p className="text-sm text-[#86868b]">{e.date}</p>
-                <p className="mt-auto pt-4 text-sm font-medium">{e.result}</p>
+                <p className="text-xs sm:text-sm text-neutral-400">{e.date}</p>
+                <p className="mt-auto pt-4 text-sm font-medium text-[#66b5ff]">
+                  {e.result}
+                </p>
               </Card>
-            ))}
-          </div>
+            </RevealBlock>
+          ))}
+        </div>
 
-          {/* Experience */}
-          <SectionTitle>
-            Experience. <span>Where I've worked.</span>
-          </SectionTitle>
-          <ol className="ms-3 border-s border-white/10 ps-6 md:ps-8">
-            {experienceItems.map((item, index) => (
-              <li
-                key={index}
-                className={`relative ${
-                  index === experienceItems.length - 1 ? "" : "mb-4"
-                }`}
-              >
+        {/* Experience */}
+        <SectionHeading
+          eyebrow="Career History"
+          title="Experience."
+          highlight="Where I've worked."
+        />
+        <ol className="ms-3 border-s border-white/10 ps-6 md:ps-8">
+          {experienceItems.map((item, index) => (
+            <li
+              key={`${item.role}-${item.date}`}
+              className={`relative ${
+                index === experienceItems.length - 1 ? "" : "mb-5"
+              }`}
+            >
+              <RevealBlock delay={index * 80}>
                 <span
                   aria-hidden="true"
-                  className="absolute top-9 -start-[31px] h-3 w-3 rounded-full bg-[#2997ff] ring-4 ring-black md:-start-[39px]"
+                  className={`absolute top-9 -start-[31px] md:-start-[39px] h-3 w-3 rounded-full ring-4 ring-black ${
+                    item.current
+                      ? "bg-[#2997ff] shadow-[0_0_12px_rgba(41,151,255,0.8)]"
+                      : "bg-neutral-500"
+                  }`}
                 />
                 <Card>
-                  <time className="text-sm text-[#86868b]">{item.date}</time>
-                  <h4 className="mt-2 text-xl font-semibold tracking-tight md:text-2xl">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <time className="text-xs sm:text-sm text-neutral-400">
+                      {item.date}
+                    </time>
+                    {item.current && (
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-[#2997ff]/15 border border-[#2997ff]/30 px-2.5 py-0.5 text-xs font-medium text-[#66b5ff]">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#2997ff] animate-pulse" />
+                        Current
+                      </span>
+                    )}
+                  </div>
+
+                  <h4 className="mt-2.5 text-xl sm:text-2xl font-semibold tracking-tight text-white">
                     {item.role}
                   </h4>
-                  <p className="mt-1 text-base text-[#86868b]">{item.company}</p>
+                  <p className="mt-1 text-sm sm:text-base text-neutral-400">
+                    {item.company}
+                  </p>
 
                   {item.description.length > 0 && (
-                    <ul className="mt-6 list-disc space-y-2 ps-5 text-[15px] font-light leading-relaxed text-neutral-300 marker:text-neutral-600">
+                    <ul className="mt-5 list-disc space-y-2 ps-5 text-sm sm:text-[15px] leading-relaxed text-neutral-300 marker:text-neutral-600">
                       {item.description.map((desc, i) => (
                         <li key={i}>{desc}</li>
                       ))}
@@ -329,39 +364,57 @@ const Resume = () => {
                     <Pills items={item.skills} />
                   </div>
                 </Card>
-              </li>
-            ))}
-          </ol>
+              </RevealBlock>
+            </li>
+          ))}
+        </ol>
 
-          {/* Skills */}
-          <SectionTitle>
-            Skills. <span>What I work with.</span>
-          </SectionTitle>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            {skillGroups.map((group) => (
-              <Card key={group.title} className="flex flex-col gap-6">
-                <h4 className="text-xl font-semibold tracking-tight">{group.title}</h4>
+        {/* Skills */}
+        <SectionHeading
+          eyebrow="Capabilities"
+          title="Skills."
+          highlight="What I work with."
+        />
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          {skillGroups.map((group, index) => (
+            <RevealBlock
+              key={group.title}
+              delay={index * 100}
+              className="h-full"
+            >
+              <Card className="flex flex-col gap-6">
+                <h4 className="text-xl font-semibold tracking-tight text-white">
+                  {group.title}
+                </h4>
                 <Pills items={group.items} />
               </Card>
-            ))}
-          </div>
+            </RevealBlock>
+          ))}
+        </div>
 
-          {/* Languages + contact */}
-          <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
+        {/* Languages + Contact */}
+        <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
+          <RevealBlock delay={0} className="h-full">
             <Card className="flex flex-col gap-6">
-              <h4 className="text-xl font-semibold tracking-tight">Languages</h4>
+              <h4 className="text-xl font-semibold tracking-tight text-white">
+                Languages
+              </h4>
               <ul className="space-y-4">
                 {languages.map((l) => (
                   <li key={l.name}>
-                    <p className="font-medium">{l.name}</p>
-                    <p className="text-sm text-[#86868b]">{l.level}</p>
+                    <p className="font-medium text-white">{l.name}</p>
+                    <p className="text-sm text-neutral-400">{l.level}</p>
                   </li>
                 ))}
               </ul>
             </Card>
+          </RevealBlock>
 
+          <RevealBlock delay={100} className="h-full">
             <Card className="flex flex-col gap-6">
-              <h4 className="text-xl font-semibold tracking-tight">Get in touch</h4>
+              <h4 className="text-xl font-semibold tracking-tight text-white">
+                Get in touch
+              </h4>
               <ul className="space-y-4">
                 {contacts.map(({ icon: Icon, label, href }) => (
                   <li key={label}>
@@ -369,10 +422,10 @@ const Resume = () => {
                       href={href}
                       target={href.startsWith("mailto:") ? undefined : "_blank"}
                       rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-3 break-all text-neutral-300 transition-colors hover:text-white"
+                      className="group inline-flex items-center gap-3 break-all text-sm sm:text-base text-neutral-300 transition-colors hover:text-white"
                     >
                       <Icon
-                        size={22}
+                        size={20}
                         aria-hidden="true"
                         className="shrink-0 text-[#2997ff]"
                       />
@@ -382,9 +435,10 @@ const Resume = () => {
                 ))}
               </ul>
             </Card>
-          </div>
+          </RevealBlock>
         </div>
       </section>
+
       <Footer />
     </div>
   );
